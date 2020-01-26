@@ -4,6 +4,7 @@ import "./App.css";
 
 import HomePage from "./pages/homepage/homepage.component";
 import EquipmentPage from "./pages/equipment/equipment.component";
+import Header from "./components/header/header-component";
 
 const ShadesPage = () => (
   <div>
@@ -20,6 +21,7 @@ const SecurityPage = () => (
 function App() {
   return (
     <div>
+      <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/Equipment' component={EquipmentPage} />
