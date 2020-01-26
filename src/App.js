@@ -3,12 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import HomePage from "./pages/homepage/homepage.component";
-
-const AVPage = () => (
-  <div>
-    <h1>AV Page</h1>
-  </div>
-);
+import EquipmentPage from "./pages/equipment/equipment.component";
 
 const ShadesPage = () => (
   <div>
@@ -27,7 +22,7 @@ function App() {
     <div>
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route path='/AV' component={AVPage} />
+        <Route path='/Equipment' component={EquipmentPage} />
         <Route path='/Shades' component={ShadesPage} />
         <Route path='/Security' component={SecurityPage} />
       </Switch>
