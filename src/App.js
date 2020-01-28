@@ -4,8 +4,9 @@ import "./App.css";
 
 import HomePage from "./pages/homepage/homepage.component";
 import EquipmentPage from "./pages/equipment/equipment.component";
-import Header from "./components/header/header-component";
-import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
+import NavBar from "./components/NavBar/NavBar-component";
+import LogInPage from "./pages/log-in/log-in.component";
+import SignUpPage from "./pages/sign-up/sign-up-component";
 import { auth } from "./firebase/firebase.utils";
 
 const ShadesPage = () => (
@@ -45,13 +46,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser} />
+        <NavBar currentUser={this.state.currentUser} />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/equipment' component={EquipmentPage} />
           <Route path='/shades' component={ShadesPage} />
           <Route path='/security' component={SecurityPage} />
-          <Route path='/signin' component={SignInAndSignUpPage} />
+          <Route path='/signin' component={LogInPage} />
+          <Route path='/signup' component={SignUpPage} />
         </Switch>
       </div>
     );

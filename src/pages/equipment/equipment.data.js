@@ -7,13 +7,15 @@ const EQUIPMENT_DATA = [
       {
         id: 1,
         name: "New TV",
-        imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+        imageUrl:
+          "https://static.toiimg.com/photo/54163919/Toshiba-32PT200ZE-32-inch-LED-Full-HD-TV.jpg",
         price: 25
       },
       {
         id: 2,
         name: "Customer Provided",
-        imageUrl: "https://i.ibb.co/ypkgK0X/blue-beanie.png",
+        imageUrl:
+          "https://static.toiimg.com/photo/54163919/Toshiba-32PT200ZE-32-inch-LED-Full-HD-TV.jpg",
         price: 18
       },
       {
@@ -68,25 +70,29 @@ const EQUIPMENT_DATA = [
       {
         id: 10,
         name: "Tilt Mount",
-        imageUrl: "https://i.ibb.co/0s3pdnc/adidas-nmd.png",
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/71fiFyQfvxL._AC_SX466_.jpg",
         price: 220
       },
       {
         id: 11,
         name: "Flat Mount",
-        imageUrl: "https://i.ibb.co/dJbG1cT/yeezy.png",
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/71fiFyQfvxL._AC_SX466_.jpg",
         price: 280
       },
       {
         id: 12,
         name: "Articulating Mount",
-        imageUrl: "https://i.ibb.co/bPmVXyP/black-converse.png",
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/71S%2Bsq6ZRFL._AC_SL1500_.jpg",
         price: 110
       },
       {
         id: 13,
         name: "TV Stand",
-        imageUrl: "https://i.ibb.co/1RcFPk0/white-nike-high-tops.png",
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/81Xx2tH8bpL._AC_SX425_.jpg",
         price: 160
       },
       {
@@ -117,69 +123,77 @@ const EQUIPMENT_DATA = [
   },
   {
     id: 3,
-    title: "Jackets",
-    routeName: "jackets",
+    title: "Speakers",
+    routeName: "spekers",
     items: [
       {
         id: 18,
-        name: "Black Jean Shearling",
-        imageUrl: "https://i.ibb.co/XzcwL5s/black-shearling.png",
+        name: "In-Ceiling",
+        imageUrl:
+          "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: 125
       },
       {
         id: 19,
-        name: "Blue Jean Jacket",
-        imageUrl: "https://i.ibb.co/mJS6vz0/blue-jean-jacket.png",
+        name: "In-Wall",
+        imageUrl:
+          "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: 90
       },
       {
         id: 20,
-        name: "Grey Jean Jacket",
-        imageUrl: "https://i.ibb.co/N71k1ML/grey-jean-jacket.png",
+        name: "Tower",
+        imageUrl:
+          "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: 90
       },
       {
         id: 21,
-        name: "Brown Shearling",
-        imageUrl: "https://i.ibb.co/s96FpdP/brown-shearling.png",
+        name: "Soundbar",
+        imageUrl:
+          "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: 165
       },
       {
         id: 22,
         name: "Tan Trench",
         name: " ",
-        imageUrl: "",
+        imageUrl:
+          "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: " "
       }
     ]
   },
   {
     id: 4,
-    title: "Womens",
-    routeName: "womens",
+    title: "Control",
+    routeName: "control",
     items: [
       {
         id: 23,
-        name: "Brown Shearling",
-        imageUrl: "https://i.ibb.co/s96FpdP/brown-shearling.png",
+        name: "remote",
+        imageUrl:
+          "https://hinchlys.co.uk/wp-content/uploads/2015/06/control4-sr-250.jpg",
         price: 165
       },
       {
         id: 24,
-        name: "",
-        imageUrl: "",
+        name: "Touch Panel",
+        imageUrl: "https://imgres.tailbase.com/rzdimg/prods/800/253351_1.jpg",
         price: ""
       },
       {
         id: 25,
-        name: "",
-        imageUrl: "",
+        name: "iPhone/iPad app",
+        imageUrl:
+          "https://lh3.googleusercontent.com/BtOEVCz4hf17gv_kNhXg38FLqPJFoK8Y5wLX4eYilgdZIrBsw1YP8P_PHhVnxFWhAA=w412-h220-rw",
         price: ""
       },
       {
         id: 26,
-        name: "",
-        imageUrl: "",
+        name: "Factory Remotes",
+        imageUrl:
+          "https://uk.toluna.com/dpolls_images/2017/01/19/83a120cc-f73e-4615-998d-d5f8846ee4f4_x365.jpg",
         price: ""
       },
       {
@@ -204,31 +218,31 @@ const EQUIPMENT_DATA = [
   },
   {
     id: 5,
-    title: "Mens",
-    routeName: "mens",
+    title: "Control System",
+    routeName: "control-system",
     items: [
       {
         id: 30,
-        name: "Camo Down Vest",
-        imageUrl: "https://i.ibb.co/xJS0T3Y/camo-vest.png",
+        name: "Control 4",
+        imageUrl: "",
         price: 325
       },
       {
         id: 31,
-        name: "Floral T-shirt",
-        imageUrl: "https://i.ibb.co/qMQ75QZ/floral-shirt.png",
+        name: "Savant",
+        imageUrl: "",
         price: 20
       },
       {
         id: 32,
-        name: "Black & White Longsleeve",
-        imageUrl: "https://i.ibb.co/55z32tw/long-sleeve.png",
+        name: "Crestron",
+        imageUrl: "",
         price: 25
       },
       {
         id: 33,
-        name: "Pink T-shirt",
-        imageUrl: "https://i.ibb.co/RvwnBL8/pink-shirt.png",
+        name: "Sonos",
+        imageUrl: " ",
         price: 25
       },
       {

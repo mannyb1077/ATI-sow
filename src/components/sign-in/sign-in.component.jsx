@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
+import SubmitButton from "../submit-button/submit-button.component";
 
 import { signInWithGoogle } from "../../firebase/firebase.utils";
 
@@ -53,15 +53,15 @@ class SignIn extends React.Component {
             required
           />
           <div className='buttons'>
-            <CustomButton type='submit'>Sign In</CustomButton>
-            <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+            <SubmitButton type='submit'>Sign In</SubmitButton>
+            <SubmitButton onClick={signInWithGoogle} isGoogleSignIn>
               Sign in with Google
-            </CustomButton>
+            </SubmitButton>
           </div>
 
           <div className='create-account'>
-            <span>Don't have an account: </span>
-            <Link className='create-account-link' to='SignUpPage'>
+            <span>First time login? </span>
+            <Link className='create-account-link' to='signup'>
               Create Account
             </Link>
           </div>

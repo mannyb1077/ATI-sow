@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
 import { ReactComponent as Logo } from "../../assets/images/ati.svg";
 
-import "./header-styles.scss";
+import "./NavBar-styles.scss";
 
-const Header = ({ currentUser }) => (
-  <div className='header'>
+const NavBar = ({ currentUser }) => (
+  <div className='nav-bar'>
     <Link className='logo-container' to='/'>
       <Logo className='logo' />
     </Link>
@@ -19,15 +19,15 @@ const Header = ({ currentUser }) => (
       </Link>
       {currentUser ? (
         <div className='options' onClick={() => auth.signOut()}>
-          Sign Out
+          SignOut
         </div>
       ) : (
         <Link className='options' to='/signin'>
-          Sign In
+          SignIn
         </Link>
       )}
     </div>
   </div>
 );
 
-export default Header;
+export default NavBar;

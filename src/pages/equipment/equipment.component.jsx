@@ -1,6 +1,6 @@
 import React from "react";
 import EQUIPMENT_DATA from "./equipment.data";
-import CollectionPreview from "../../components/collection-preview/collection-preview.component";
+import EquipmentPreview from "../../components/equipment-preview/equipment-preview.component";
 
 class EquipmentPage extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class EquipmentPage extends React.Component {
     return (
       <div className='equipment-page'>
         {collections.map(({ id, ...otherCollectionProps }) => (
-          <CollectionPreview key={id} {...otherCollectionProps} />
+          <EquipmentPreview key={id} {...otherCollectionProps} />
         ))}
       </div>
     );
