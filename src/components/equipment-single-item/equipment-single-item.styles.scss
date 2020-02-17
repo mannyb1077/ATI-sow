@@ -4,6 +4,7 @@
     flex-direction: column;
     height: 250px;
     align-items: center;
+    position: relative;
 
     .image {
         width: 100%;
@@ -12,6 +13,26 @@
         background-position: center;
         margin-bottom: 5px;
 
+    }
+
+    .submit-button {
+        width: 60%;
+        opacity: 0.7%;
+        position: absolute;
+        top: 120px;
+        display: none;
+    }
+
+    &:hover {
+        .image {
+            opacity: 0.5;
+        }
+
+        .submit-button {
+            opacity: 90.5;
+            display: flex;
+            text-align: center;
+        }
     }
 
     .equipment-single-item-footer {

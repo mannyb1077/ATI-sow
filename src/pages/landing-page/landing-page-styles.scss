@@ -1,0 +1,17 @@
+.landing-page {
+    //width: 380px;
+    height: 660px;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../../assets/images/premium_audio-wallpaper-1366x768.jpg);
+
+    .buttons {
+        width: 380px;
+        display: flex;
+        justify-content: space-between;
+        margin: 350px;
+        margin-left: 880px;
+
+
+    }
+}

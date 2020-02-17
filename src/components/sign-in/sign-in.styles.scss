@@ -3,21 +3,14 @@
     display: flex;
     flex-direction: column;
 
-    .title {
-        margin: 10px, 0;
-    }
-
     .buttons {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
     }
-}
 
-.create-account {
-    padding: 30px;
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 15px;
-    justify-content: space-between;
-    cursor: pointer;
+    .create-account-link {
+        color: blue;
+    }
 }

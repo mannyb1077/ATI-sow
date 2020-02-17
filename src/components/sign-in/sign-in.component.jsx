@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import FormInput from "../form-input/form-input.component";
 import SubmitButton from "../submit-button/submit-button.component";
 
-import { signInWithGoogle } from "../../firebase/firebase.utils";
+import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 
 import "./sign-in.styles.scss";
 
@@ -17,10 +17,26 @@ class SignIn extends React.Component {
     };
   }
 
-  handleSubmit = event => {
+  handleSubmit = async event => {
     event.preventDefault();
 
-    this.setState({ email: "", password: "" });
+    const { email, password } = this.state;
+
+    if (!email.match("@ati-america.com")) {
+      alert("Please use your ATI email");
+      return;
+    }
+
+    try {
+      auth.signInWithEmailAndPassword(email, password);
+      this.setState({ email: "", password: "" });
+    } catch (error) {
+      if ((error = "auth/wrong-password")) {
+        console.log("Invalid Password");
+      }
+      console.log("error");
+      console.log(error);
+    }
   };
 
   handleChange = event => {
@@ -54,16 +70,15 @@ class SignIn extends React.Component {
           />
           <div className='buttons'>
             <SubmitButton type='submit'>Sign In</SubmitButton>
-            <SubmitButton onClick={signInWithGoogle} isGoogleSignIn>
+            <div className='create-account'>
+              <span> First time login? </span>
+              <Link className='create-account-link' to='signup'>
+                Create Account
+              </Link>
+            </div>
+            {/* <SubmitButton onClick={signInWithGoogle} isGoogleSignIn>
               Sign in with Google
-            </SubmitButton>
-          </div>
-
-          <div className='create-account'>
-            <span>First time login? </span>
-            <Link className='create-account-link' to='signup'>
-              Create Account
-            </Link>
+            </SubmitButton> */}
           </div>
         </form>
       </div>

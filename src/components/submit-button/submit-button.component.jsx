@@ -2,9 +2,16 @@ import React from "react";
 
 import "./submit-button.styles.scss";
 
-const SubmitButton = ({ children, isGoogleSignIn, ...otherProps }) => (
+const SubmitButton = ({
+  children,
+  isGoogleSignIn,
+  inverted,
+  ...otherProps
+}) => (
   <button
-    className={`${isGoogleSignIn ? "google-sign-in" : ""} submit-button`}
+    className={`${inverted ? "inverted" : ""}  ${
+      isGoogleSignIn ? "google-sign-in" : ""
+    } submit-button`}
     {...otherProps}
   >
     {children}

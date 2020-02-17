@@ -9,14 +9,14 @@ const EQUIPMENT_DATA = [
         name: "New TV",
         imageUrl:
           "https://static.toiimg.com/photo/54163919/Toshiba-32PT200ZE-32-inch-LED-Full-HD-TV.jpg",
-        price: 25
+        price: ""
       },
       {
         id: 2,
         name: "Customer Provided",
         imageUrl:
           "https://static.toiimg.com/photo/54163919/Toshiba-32PT200ZE-32-inch-LED-Full-HD-TV.jpg",
-        price: 18
+        price: ""
       },
       {
         id: 3,
@@ -72,28 +72,28 @@ const EQUIPMENT_DATA = [
         name: "Tilt Mount",
         imageUrl:
           "https://images-na.ssl-images-amazon.com/images/I/71fiFyQfvxL._AC_SX466_.jpg",
-        price: 220
+        price: ""
       },
       {
         id: 11,
         name: "Flat Mount",
         imageUrl:
           "https://images-na.ssl-images-amazon.com/images/I/71fiFyQfvxL._AC_SX466_.jpg",
-        price: 280
+        price: ""
       },
       {
         id: 12,
         name: "Articulating Mount",
         imageUrl:
           "https://images-na.ssl-images-amazon.com/images/I/71S%2Bsq6ZRFL._AC_SL1500_.jpg",
-        price: 110
+        price: ""
       },
       {
         id: 13,
         name: "TV Stand",
         imageUrl:
           "https://images-na.ssl-images-amazon.com/images/I/81Xx2tH8bpL._AC_SX425_.jpg",
-        price: 160
+        price: ""
       },
       {
         id: 14,
@@ -131,28 +131,28 @@ const EQUIPMENT_DATA = [
         name: "In-Ceiling",
         imageUrl:
           "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
-        price: 125
+        price: ""
       },
       {
         id: 19,
         name: "In-Wall",
         imageUrl:
           "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
-        price: 90
+        price: ""
       },
       {
         id: 20,
         name: "Tower",
         imageUrl:
           "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
-        price: 90
+        price: ""
       },
       {
         id: 21,
         name: "Soundbar",
         imageUrl:
           "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
-        price: 165
+        price: ""
       },
       {
         id: 22,
@@ -174,7 +174,7 @@ const EQUIPMENT_DATA = [
         name: "remote",
         imageUrl:
           "https://hinchlys.co.uk/wp-content/uploads/2015/06/control4-sr-250.jpg",
-        price: 165
+        price: ""
       },
       {
         id: 24,
@@ -225,25 +225,25 @@ const EQUIPMENT_DATA = [
         id: 30,
         name: "Control 4",
         imageUrl: "",
-        price: 325
+        price: ""
       },
       {
         id: 31,
         name: "Savant",
         imageUrl: "",
-        price: 20
+        price: ""
       },
       {
         id: 32,
         name: "Crestron",
         imageUrl: "",
-        price: 25
+        price: ""
       },
       {
         id: 33,
         name: "Sonos",
         imageUrl: " ",
-        price: 25
+        price: ""
       },
       {
         id: 34,
