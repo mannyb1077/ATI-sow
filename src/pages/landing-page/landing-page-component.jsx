@@ -4,6 +4,7 @@ import SubmitButton from "../../components/submit-button/submit-button.component
 
 import "../landing-page/landing-page-styles.scss";
 
+// Displays Landing Page with Sign In and Sign Up buttons
 const LandingPage = () => (
   <div className='landing-page'>
     {

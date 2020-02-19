@@ -2,6 +2,7 @@ import React from "react";
 
 import "./submit-button.styles.scss";
 
+// Allows Submit button to use in Multiple Components
 const SubmitButton = ({
   children,
   isGoogleSignIn,

@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import { auth } from "../../firebase/firebase.utils";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown";
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { ReactComponent as Logo } from "../../assets/images/ati.svg";
 
 import "./NavBar-styles.scss";
@@ -17,8 +20,8 @@ const NavBar = ({ currentUser, hidden }) => (
       <Link className='options' to='equipment'>
         Equipment
       </Link>
-      <Link className='options' to='contact'>
-        Contact
+      <Link className='options' to='summary'>
+        Summary
       </Link>
       {currentUser ? (
         <div className='options' onClick={() => auth.signOut()}>
@@ -37,9 +40,10 @@ const NavBar = ({ currentUser, hidden }) => (
   </div>
 );
 
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-  currentUser,
-  hidden
+// Allows to toggle user Signed in/sign out and cart icon hide/unhide using Redux
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  hidden: selectCartHidden
 });
 
 export default connect(mapStateToProps)(NavBar);

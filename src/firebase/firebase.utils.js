@@ -18,12 +18,10 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-
+  // Checks to see if user exists before creating
   const snapShot = await userRef.get();
 
-  //console.log(snapShot);
-  //console.log(firestore.doc("users/123456"));
-
+  // Create new user if it doesnt't exist
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -47,6 +45,7 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+// Allows to Sign in with Google by choosing account when enabled
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);

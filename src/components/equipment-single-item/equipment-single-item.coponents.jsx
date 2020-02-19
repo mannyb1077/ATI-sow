@@ -5,8 +5,9 @@ import SubmitButton from "../../components/submit-button/submit-button.component
 
 import "./equipment-single-item.styles.scss";
 
+//Creates equipmnent single item component
 const EquipmentSingleItem = ({ item, addItem }) => {
-  const { name, price, imageUrl } = item;
+  const { name, size, imageUrl, dimensions } = item;
   return (
     <div className='equipment-single-item'>
       <div
@@ -15,10 +16,13 @@ const EquipmentSingleItem = ({ item, addItem }) => {
           backgroundImage: `url(${imageUrl})`
         }}
       />
+      {/* Displays Item Information at bottom of item */}
       <div className='equipment-single-item-footer'>
         <span className='name'>{name}</span>
-        <span className='price'>{price}</span>
+        <span className='size'>{size}</span>
+        <span className='dimensions'>{dimensions}</span>
       </div>
+      {/* Adds Add to Room button at equipment single item component */}
       <SubmitButton onClick={() => addItem(item)} inverted>
         {" "}
         Add to Room{" "}
@@ -27,6 +31,7 @@ const EquipmentSingleItem = ({ item, addItem }) => {
   );
 };
 
+// Adds single item to Cart
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item))
 });

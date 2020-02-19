@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import "./App.css";
 
 import LandingPage from "./pages/landing-page/landing-page-component";
@@ -9,8 +10,12 @@ import EquipmentPage from "./pages/equipment/equipment.component";
 import NavBar from "./components/NavBar/NavBar-component";
 import LogInPage from "./pages/log-in/log-in.component";
 import SignUpPage from "./pages/sign-up/sign-up-component";
+import JobSummaryPage from "./pages/job-summary/job-summary.component";
+import AddRoomPage from "./pages/room-page/room-page.component";
+
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
+import { selectCurrentUser } from "./redux/user/user.selectors";
 
 const ShadesPage = () => (
   <div>
@@ -58,8 +63,10 @@ class App extends React.Component {
         <NavBar />
         <Switch>
           <Route exact path='/' component={LandingPage} />
-          <Route path='/home' component={HomePage} />
-          <Route path='/equipment' component={EquipmentPage} />
+          <Route exact path='/home' component={HomePage} />
+          <Route exact path='/summary' component={JobSummaryPage} />
+          <Route path='/home/equipment' component={EquipmentPage} />
+          <Route exact path='/home/room' component={AddRoomPage} />
           <Route path='/shades' component={ShadesPage} />
           <Route path='/security' component={SecurityPage} />
           <Route
@@ -82,8 +89,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+// Tracks Current User
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = dispatch => ({

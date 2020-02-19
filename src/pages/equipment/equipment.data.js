@@ -6,27 +6,29 @@ const EQUIPMENT_DATA = [
     items: [
       {
         id: 1,
-        name: "New TV",
+        itemName: "TV",
+        type: "New",
         imageUrl:
           "https://static.toiimg.com/photo/54163919/Toshiba-32PT200ZE-32-inch-LED-Full-HD-TV.jpg",
-        price: ""
+        size: ""
       },
       {
         id: 2,
-        name: "Customer Provided",
+        itemName: "TV",
+        type: "Customer Provided",
         imageUrl:
           "https://static.toiimg.com/photo/54163919/Toshiba-32PT200ZE-32-inch-LED-Full-HD-TV.jpg",
-        price: ""
+        size: ""
       },
       {
         id: 3,
-        name: "",
+        itemName: "Pocket",
         imageUrl: "",
-        price: ""
+        dimensions: "WxH"
       },
       {
         id: 4,
-        name: "",
+        itemName: "",
         imageUrl: "",
         price: ""
       },
@@ -69,28 +71,31 @@ const EQUIPMENT_DATA = [
     items: [
       {
         id: 10,
-        name: "Tilt Mount",
+        itemName: "TV Mount",
+        type: "Tilt",
         imageUrl:
           "https://images-na.ssl-images-amazon.com/images/I/71fiFyQfvxL._AC_SX466_.jpg",
         price: ""
       },
       {
         id: 11,
-        name: "Flat Mount",
+        itemName: "TV Mount",
+        type: "Flat Mount",
         imageUrl:
           "https://images-na.ssl-images-amazon.com/images/I/71fiFyQfvxL._AC_SX466_.jpg",
         price: ""
       },
       {
         id: 12,
-        name: "Articulating Mount",
+        itemName: "TV Mount",
+        type: "Articulating",
         imageUrl:
           "https://images-na.ssl-images-amazon.com/images/I/71S%2Bsq6ZRFL._AC_SL1500_.jpg",
         price: ""
       },
       {
         id: 13,
-        name: "TV Stand",
+        itemName: "TV Stand",
         imageUrl:
           "https://images-na.ssl-images-amazon.com/images/I/81Xx2tH8bpL._AC_SX425_.jpg",
         price: ""
@@ -124,40 +129,45 @@ const EQUIPMENT_DATA = [
   {
     id: 3,
     title: "Speakers",
-    routeName: "spekers",
+    routeName: "speakers",
     items: [
       {
         id: 18,
-        name: "In-Ceiling",
+
+        itemName: "Speakers",
+        type: "In-Ceiling",
         imageUrl:
           "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: ""
       },
       {
         id: 19,
-        name: "In-Wall",
+        itemName: "Speakers",
+        type: "In-Wall",
         imageUrl:
           "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: ""
       },
       {
         id: 20,
-        name: "Tower",
+        itemName: "Speakers",
+        type: "Tower",
         imageUrl:
           "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: ""
       },
       {
         id: 21,
-        name: "Soundbar",
+        itemName: "Speakers",
+        type: "Tower",
         imageUrl:
           "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: ""
       },
       {
         id: 22,
-        name: "Tan Trench",
-        name: " ",
+        itemName: "Speakers",
+        type: "BookShelf",
         imageUrl:
           "https://audioengineusa.com/wp-content/uploads/2019/01/Untitled-design-11-400x400.png",
         price: " "
@@ -171,34 +181,38 @@ const EQUIPMENT_DATA = [
     items: [
       {
         id: 23,
-        name: "remote",
+        itemName: "Control",
+        type: "remote",
         imageUrl:
           "https://hinchlys.co.uk/wp-content/uploads/2015/06/control4-sr-250.jpg",
         price: ""
       },
       {
         id: 24,
-        name: "Touch Panel",
+        itemName: "Control",
+        type: "Touch Panel",
         imageUrl: "https://imgres.tailbase.com/rzdimg/prods/800/253351_1.jpg",
         price: ""
       },
       {
         id: 25,
-        name: "iPhone/iPad app",
+        itemName: "Control",
+        type: "iPhone/iPad App",
         imageUrl:
           "https://lh3.googleusercontent.com/BtOEVCz4hf17gv_kNhXg38FLqPJFoK8Y5wLX4eYilgdZIrBsw1YP8P_PHhVnxFWhAA=w412-h220-rw",
         price: ""
       },
       {
         id: 26,
-        name: "Factory Remotes",
+        itemName: "Control",
+        type: "Factory Remotes",
         imageUrl:
           "https://uk.toluna.com/dpolls_images/2017/01/19/83a120cc-f73e-4615-998d-d5f8846ee4f4_x365.jpg",
         price: ""
       },
       {
         id: 27,
-        name: "",
+        itemName: "",
         imageUrl: "",
         price: ""
       },

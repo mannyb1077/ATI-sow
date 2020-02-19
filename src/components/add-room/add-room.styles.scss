@@ -1,0 +1,14 @@
+.add-room {
+    width: 400px;
+
+    .buttons {
+        width: 380px;
+        display: flex;
+        justify-content: space-between;
+
+        .summary {
+            font-size: 10px;
+        }
+
+    }
+}

@@ -45,6 +45,7 @@ class SignIn extends React.Component {
     this.setState({ [name]: value });
   };
 
+  // Displays Sign In Form
   render() {
     return (
       <div className='sign-in'>

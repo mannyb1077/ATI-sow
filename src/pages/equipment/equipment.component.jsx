@@ -2,6 +2,7 @@ import React from "react";
 import EQUIPMENT_DATA from "./equipment.data";
 import EquipmentPreview from "../../components/equipment-preview/equipment-preview.component";
 
+// Displays Equipment Inventory by grabing EQUIPMENT_DATA from equipment/equipment-data.js
 class EquipmentPage extends React.Component {
   constructor(props) {
     super(props);

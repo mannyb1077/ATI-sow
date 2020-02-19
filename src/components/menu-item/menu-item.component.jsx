@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 
 import "./menu-item.styles.scss";
 
+// Handles Icons in home Page and displays proper information (3 Menu Items )
 const MenuItem = ({ title, imageUrl, history, linkUrl, match }) => (
   <div
     className='menu-item'
