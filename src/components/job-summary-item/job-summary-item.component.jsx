@@ -3,17 +3,24 @@ import { connect } from "react-redux";
 import {
   clearItemFromCart,
   addItem,
-  removeItem
+  removeItem,
+  addRoom
 } from "../../redux/cart/cart.actions";
 
 import "./job-summary.styles.scss";
 
 //Displays cart item in a single card in pages/job-summary-item component
-const JobSummaryItem = ({ cartItem, clearItem, addItem, removeItem }) => {
-  const { imageUrl, itemName, type, size, quantity } = cartItem;
+const JobSummaryItem = ({
+  addRoom,
+  cartItem,
+  clearItem,
+  addItem,
+  removeItem
+}) => {
+  const { roomName, imageUrl, itemName, type, size, quantity } = cartItem;
   return (
     <div className='job-summary-item'>
-      <span className='name'> Room Name Goes Here!</span>
+      <span className='room'> {roomName}Room Name Goes Here!</span>
       <div className='image-container'>
         <img src={imageUrl} alt='item' />
       </div>
@@ -32,9 +39,12 @@ const JobSummaryItem = ({ cartItem, clearItem, addItem, removeItem }) => {
         </div>
       </span>
 
-      {/* &#1005; = x */}
+      {/* &#10060; = x */}
+
       <span className='delete-button' onClick={() => clearItem(cartItem)}>
-        X
+        <span role='img' aria-label='Snowman'>
+          &#10060;
+        </span>
       </span>
     </div>
   );
@@ -43,7 +53,8 @@ const JobSummaryItem = ({ cartItem, clearItem, addItem, removeItem }) => {
 const mapDispatchToProps = dispatch => ({
   clearItem: item => dispatch(clearItemFromCart(item)),
   addItem: item => dispatch(addItem(item)),
-  removeItem: item => dispatch(removeItem(item))
+  removeItem: item => dispatch(removeItem(item)),
+  Addroom: room => dispatch(addRoom)(room)
 });
 
 export default connect(null, mapDispatchToProps)(JobSummaryItem);

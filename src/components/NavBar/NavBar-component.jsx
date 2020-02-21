@@ -13,14 +13,22 @@ import "./NavBar-styles.scss";
 
 const NavBar = ({ currentUser, hidden }) => (
   <div className='nav-bar'>
-    <Link className='logo-container' to='/'>
-      <Logo className='logo' />
-    </Link>
+    {currentUser ? (
+      <div className='logo-container'>
+        <Link className='logo-container' to='/home'>
+          <Logo className='logo' />
+        </Link>
+      </div>
+    ) : (
+      <Link className='logo-container' to='/'>
+        <Logo className='logo' />
+      </Link>
+    )}
     <div className='options'>
-      <Link className='options' to='equipment'>
+      <Link className='options' to='/home/equipment'>
         Equipment
       </Link>
-      <Link className='options' to='summary'>
+      <Link className='options' to='/summary'>
         Summary
       </Link>
       {currentUser ? (

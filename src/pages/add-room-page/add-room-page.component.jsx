@@ -3,7 +3,7 @@ import AddRoom from "../../components/add-room/add-room.component";
 
 //import RoomPreview from " ";
 
-import "./room-page.styles.scss";
+import "./add-room-page.styles.scss";
 
 // Displays Add Room Page by grabing info from component/add-room/add-room.component
 const AddRoomPage = () => (

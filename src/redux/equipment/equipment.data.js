@@ -1,5 +1,5 @@
-const EQUIPMENT_DATA = [
-  {
+const EQUIPMENT_DATA = {
+  tv: {
     id: 1,
     title: "TV",
     routeName: "tv",
@@ -23,51 +23,23 @@ const EQUIPMENT_DATA = [
       {
         id: 3,
         itemName: "Pocket",
+        type: "",
         imageUrl: "",
-        dimensions: "WxH"
+        size: "WxH"
       },
       {
         id: 4,
-        itemName: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 5,
-        name: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 6,
-        name: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 7,
-        name: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 8,
-        name: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 9,
-        name: "",
-        imageUrl: "",
-        price: ""
+        itemName: "TV",
+        type: "No TV",
+        imageUrl: " ",
+        size: ""
       }
     ]
   },
-  {
+  mount: {
     id: 2,
     title: "TV Mount",
-    routeName: "tvMount",
+    routeName: "mount",
     items: [
       {
         id: 10,
@@ -99,34 +71,10 @@ const EQUIPMENT_DATA = [
         imageUrl:
           "https://images-na.ssl-images-amazon.com/images/I/81Xx2tH8bpL._AC_SX425_.jpg",
         price: ""
-      },
-      {
-        id: 14,
-        name: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 15,
-        name: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 16,
-        name: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 17,
-        name: "",
-        imageUrl: "",
-        price: ""
       }
     ]
   },
-  {
+  speakers: {
     id: 3,
     title: "Speakers",
     routeName: "speakers",
@@ -174,10 +122,10 @@ const EQUIPMENT_DATA = [
       }
     ]
   },
-  {
+  controls: {
     id: 4,
     title: "Control",
-    routeName: "control",
+    routeName: "controls",
     items: [
       {
         id: 23,
@@ -209,31 +157,13 @@ const EQUIPMENT_DATA = [
         imageUrl:
           "https://uk.toluna.com/dpolls_images/2017/01/19/83a120cc-f73e-4615-998d-d5f8846ee4f4_x365.jpg",
         price: ""
-      },
-      {
-        id: 27,
-        itemName: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 28,
-        name: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 29,
-        name: "",
-        imageUrl: "",
-        price: ""
       }
     ]
   },
-  {
+  system: {
     id: 5,
     title: "Control System",
-    routeName: "control-system",
+    routeName: "system",
     items: [
       {
         id: 30,
@@ -258,21 +188,9 @@ const EQUIPMENT_DATA = [
         name: "Sonos",
         imageUrl: " ",
         price: ""
-      },
-      {
-        id: 34,
-        name: "",
-        imageUrl: "",
-        price: ""
-      },
-      {
-        id: 35,
-        name: "",
-        imageUrl: "",
-        price: ""
       }
     ]
   }
-];
+};
 
 export default EQUIPMENT_DATA;

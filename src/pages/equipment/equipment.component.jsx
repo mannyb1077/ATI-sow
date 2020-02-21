@@ -1,26 +1,17 @@
 import React from "react";
-import EQUIPMENT_DATA from "./equipment.data";
-import EquipmentPreview from "../../components/equipment-preview/equipment-preview.component";
+import { Route } from "react-router-dom";
+
+import EquipmentOverview from "../../components/equipment-overview/equipment-overview.component";
+import CollectionPage from "../collection/collection.component";
 
 // Displays Equipment Inventory by grabing EQUIPMENT_DATA from equipment/equipment-data.js
-class EquipmentPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      collections: EQUIPMENT_DATA
-    };
-  }
-  render() {
-    const { collections } = this.state;
-    return (
-      <div className='equipment-page'>
-        {collections.map(({ id, ...otherCollectionProps }) => (
-          <EquipmentPreview key={id} {...otherCollectionProps} />
-        ))}
-      </div>
-    );
-  }
-}
+const EquipmentPage = ({ match }) => {
+  return (
+    <div className='equipment-page'>
+      <Route exact path={`${match.path}`} component={EquipmentOverview} />
+      <Route path={`${match.path}/:collectionId`} component={CollectionPage} />
+    </div>
+  );
+};
 
 export default EquipmentPage;
