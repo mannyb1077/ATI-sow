@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import FormInput from "../form-input/form-input.component";
 import SubmitButton from "../submit-button/submit-button.component";
 
-import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+import { auth } from "../../firebase/firebase.utils";
 
 import "./sign-in.styles.scss";
 
@@ -31,11 +31,7 @@ class SignIn extends React.Component {
       auth.signInWithEmailAndPassword(email, password);
       this.setState({ email: "", password: "" });
     } catch (error) {
-      if ((error = "auth/wrong-password")) {
-        console.log("Invalid Password");
-      }
-      console.log("error");
-      console.log(error);
+      return error;
     }
   };
 
@@ -77,9 +73,6 @@ class SignIn extends React.Component {
                 Create Account
               </Link>
             </div>
-            {/* <SubmitButton onClick={signInWithGoogle} isGoogleSignIn>
-              Sign in with Google
-            </SubmitButton> */}
           </div>
         </form>
       </div>

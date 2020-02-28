@@ -1,4 +1,17 @@
 .equipment-overview {
     display: flex;
     flex-direction: column;
+
+    .buttons {
+        width: 380px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .submit-button {
+        font-size: 12px;
+    }
+
 }

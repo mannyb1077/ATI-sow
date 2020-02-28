@@ -1,10 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import EquipmentSingleItem from "../../components/equipment-single-item/equipment-single-item.coponents";
-import {
-  selectCollection,
-  selectCollections
-} from "../../redux/equipment/equipment.selectors";
+import { selectCollection } from "../../redux/equipment/equipment.selectors";
 
 import "./collection.styles.scss";
 

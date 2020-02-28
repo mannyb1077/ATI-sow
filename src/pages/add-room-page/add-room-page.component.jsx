@@ -1,5 +1,6 @@
 import React from "react";
-import AddRoom from "../../components/add-room/add-room.component";
+import AddNewRoomToCart from "../../components/add-room-form/add-room-form.component";
+import RoomList from "../../components/room-list/room-list.component";
 
 //import RoomPreview from " ";
 
@@ -9,7 +10,10 @@ import "./add-room-page.styles.scss";
 const AddRoomPage = () => (
   <div className='add-room-page'>
     <div className='add-room'>
-      <AddRoom />
+      <AddNewRoomToCart />
+    </div>
+    <div className='room-list'>
+      <RoomList />
     </div>
   </div>
 );

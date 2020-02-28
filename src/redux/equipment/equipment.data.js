@@ -2,7 +2,7 @@ const EQUIPMENT_DATA = {
   tv: {
     id: 1,
     title: "TV",
-    routeName: "tv",
+    routeName: "equipment/tv",
     items: [
       {
         id: 1,
@@ -39,7 +39,7 @@ const EQUIPMENT_DATA = {
   mount: {
     id: 2,
     title: "TV Mount",
-    routeName: "mount",
+    routeName: "equipment/mount",
     items: [
       {
         id: 10,
@@ -77,7 +77,7 @@ const EQUIPMENT_DATA = {
   speakers: {
     id: 3,
     title: "Speakers",
-    routeName: "speakers",
+    routeName: "equipment/speakers",
     items: [
       {
         id: 18,
@@ -125,7 +125,7 @@ const EQUIPMENT_DATA = {
   controls: {
     id: 4,
     title: "Control",
-    routeName: "controls",
+    routeName: "equipment/controls",
     items: [
       {
         id: 23,
@@ -163,7 +163,7 @@ const EQUIPMENT_DATA = {
   system: {
     id: 5,
     title: "Control System",
-    routeName: "system",
+    routeName: "equipment/system",
     items: [
       {
         id: 30,

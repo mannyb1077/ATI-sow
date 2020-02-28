@@ -3,20 +3,13 @@ import { connect } from "react-redux";
 import {
   clearItemFromCart,
   addItem,
-  removeItem,
-  addRoom
+  removeItem
 } from "../../redux/cart/cart.actions";
 
 import "./job-summary.styles.scss";
 
 //Displays cart item in a single card in pages/job-summary-item component
-const JobSummaryItem = ({
-  addRoom,
-  cartItem,
-  clearItem,
-  addItem,
-  removeItem
-}) => {
+const JobSummaryItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   const { roomName, imageUrl, itemName, type, size, quantity } = cartItem;
   return (
     <div className='job-summary-item'>
@@ -53,8 +46,7 @@ const JobSummaryItem = ({
 const mapDispatchToProps = dispatch => ({
   clearItem: item => dispatch(clearItemFromCart(item)),
   addItem: item => dispatch(addItem(item)),
-  removeItem: item => dispatch(removeItem(item)),
-  Addroom: room => dispatch(addRoom)(room)
+  removeItem: item => dispatch(removeItem(item))
 });
 
 export default connect(null, mapDispatchToProps)(JobSummaryItem);

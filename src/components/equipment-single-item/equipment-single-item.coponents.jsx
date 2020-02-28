@@ -7,7 +7,7 @@ import "./equipment-single-item.styles.scss";
 
 //Creates equipmnent single item component
 const EquipmentSingleItem = ({ item, addItem }) => {
-  const { itemName, imageUrl, type, roomName } = item;
+  const { itemName, imageUrl, type } = item;
   return (
     <div className='equipment-single-item'>
       <div
@@ -22,10 +22,11 @@ const EquipmentSingleItem = ({ item, addItem }) => {
         <span className='name'>{itemName}</span>
         {/* <span className='size'>{size}</span> */}
       </div>
+
       {/* Adds Add to Room button at equipment single item component */}
       <SubmitButton onClick={() => addItem(item)} inverted>
         {" "}
-        Add to Room {roomName}
+        Add to Room
       </SubmitButton>
     </div>
   );

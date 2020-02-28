@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+//import SubmitButton from "../submit-button/submit-button.component";
 
 import { selectCollectionsForPreview } from "../../redux/equipment/equipment.selectors";
 import EquipmentPreview from "../equipment-preview/equipment-preview.component";

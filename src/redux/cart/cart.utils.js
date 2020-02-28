@@ -1,19 +1,3 @@
-export const addRoomToCart = (cartRooms, cartRoomToAdd) => {
-  const existingCartRoom = cartRooms.find(
-    cartRoom => cartRoom.id === cartRoomToAdd.id
-  );
-
-  if (existingCartRoom) {
-    return cartRooms.map(cartRoom =>
-      cartRoom.id === cartRoomToAdd.id
-        ? { ...cartRoom, quantity: cartRoom.quantity + 1 }
-        : cartRoom
-    );
-  }
-
-  return [...cartRooms, { ...cartRoomToAdd, quantity: 1 }];
-};
-
 export const addItemToCart = (cartItems, cartItemToAdd) => {
   const existingCartItem = cartItems.find(
     cartItem => cartItem.id === cartItemToAdd.id

@@ -4,11 +4,6 @@ export const toggleCartHidden = () => ({
   type: CartActionTypes.TOGGLE_CART_HIDDEN
 });
 
-export const addRoom = room => ({
-  type: CartActionTypes.ADD_ROOM,
-  payload: room
-});
-
 export const addItem = item => ({
   type: CartActionTypes.ADD_ITEM,
   payload: item
