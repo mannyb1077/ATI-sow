@@ -1,5 +1,5 @@
-import RoomActionTypes from "./room.types";
-import { addRoomToRooms, addRoomToRoomsHouse } from "./room.utils";
+import RoomActionTypes from "../types/room.types";
+
 import uuid from "uuid";
 
 const INITIAL_STATE = {
@@ -7,10 +7,11 @@ const INITIAL_STATE = {
   rooms: [
     {
       id: uuid(),
-      roomName: "my frist room",
+      roomName: "",
+      title: "",
       equipment: [
         {
-          tv: "Customer Provided"
+          tv: ""
         }
       ],
       roomNotes: ""
@@ -24,6 +25,11 @@ const houseReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         rooms: [...state.rooms, action.payload]
+      };
+    case RoomActionTypes.DELETE_ROOM:
+      return {
+        ...state,
+        rooms: state.rooms.filter(roomName => roomName.id !== action.payload.id)
       };
 
     default:

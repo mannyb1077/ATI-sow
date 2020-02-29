@@ -1,16 +1,15 @@
 import { createSelector } from "reselect";
-import uuid from "uuid";
 
 const selectHouse = state => state.house;
 
 export const selectRooms = createSelector([selectHouse], house => house.rooms);
 
 export const selectRoomsForPreview = createSelector([selectRooms], rooms =>
-  Object.keys(uuid()).map(key => rooms[uuid()])
+  Object.keys(rooms).map(key => rooms[key])
 );
 
-export const selectRoomName = collectionUrlParam =>
-  createSelector([selectRooms], rooms => rooms[collectionUrlParam]);
+export const selectRoomName = roomsUrlParam =>
+  createSelector([selectRooms], rooms => rooms[roomsUrlParam]);
 
 export const selectRoomsCount = createSelector([selectRooms], rooms =>
   rooms.reduce(

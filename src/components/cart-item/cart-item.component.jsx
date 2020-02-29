@@ -2,7 +2,7 @@ import React from "react";
 
 import "./cart-item.styles.scss";
 
-// Items to display in Cart Item dropdown
+// Item to display in Cart Item dropdown
 const CartItem = ({
   item: { imageUrl, type, quantity, itemName, dimensions }
 }) => (

@@ -1,9 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import uuid from "uuid";
 //import PropTypes from "prop-types";
 
-import { addRoom } from "../../redux/room/room.actions";
+import { addRoom } from "../../redux/actions/room.actions";
 import FormInput from "../form-input/form-input.component";
 import SubmitButton from "../submit-button/submit-button.component";
 
@@ -31,7 +32,13 @@ class AddNewRoomToCart extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     const rooms = this.state.roomName;
-    const room = { roomName: rooms };
+    const room = {
+      id: uuid(),
+      roomName: rooms,
+      title: rooms,
+      equipment: [],
+      roomNotes: "Notes related to room will go here"
+    };
 
     this.props.dispatch(addRoom(room));
 

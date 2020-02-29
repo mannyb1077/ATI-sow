@@ -8,6 +8,5 @@ export const addRoomToRooms = (rooms, roomNameToAdd) => {
       roomName.uuid === roomNameToAdd.uuid ? { ...roomName } : roomName
     );
   }
-  console.log(roomNameToAdd);
   return [...rooms, { ...roomNameToAdd }];
 };
