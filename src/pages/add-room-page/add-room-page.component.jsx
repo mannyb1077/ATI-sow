@@ -13,7 +13,10 @@ const AddRoomPage = () => (
       <AddNewRoomToCart />
     </div>
     <div className='room-list'>
-      <RoomList />
+      <h2>Rooms in current project</h2>
+      <div className='room-list-buttons'>
+        <RoomList />
+      </div>
     </div>
   </div>
 );

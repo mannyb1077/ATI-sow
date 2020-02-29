@@ -8,7 +8,7 @@ import userReducer from "./user/user-reducer";
 import cartReducer from "./cart/cart.reducer";
 import directoryReducer from "./directory/directory.reducer";
 import equipmentReducer from "./equipment/equipment.reducer";
-import houseReducer from "./reducers/room.reducer";
+import houseReducer from "./house/house.reducer";
 
 const persistConfig = {
   key: "root",

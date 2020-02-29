@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import uuid from "uuid";
 //import PropTypes from "prop-types";
 
-import { addRoom } from "../../redux/actions/room.actions";
+import { addRoom } from "../../redux/house/house.actions";
 import FormInput from "../form-input/form-input.component";
 import SubmitButton from "../submit-button/submit-button.component";
 

@@ -3,10 +3,21 @@
     height: 600px;
     display: flex;
 
-
+    h2 {
+        text-align: center;
+        font-size: 40px;
+    }
 
     .room-list {
         width: 60%;
+
+        .room-list-buttons {
+
+            display: flex;
+
+
+        }
+
 
     }
 

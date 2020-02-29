@@ -32,8 +32,6 @@ const JobSummaryItem = ({ cartItem, clearItem, addItem, removeItem }) => {
         </div>
       </span>
 
-      {/* &#10060; = x */}
-
       <span className='delete-button' onClick={() => clearItem(cartItem)}>
         <span role='img' aria-label='Snowman'>
           &#10060;
