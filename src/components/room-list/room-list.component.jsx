@@ -11,15 +11,9 @@ import "./room-list.styles.scss";
 const RoomList = ({ rooms }) => (
   <div className='room-preview'>
     <div className='rooms'>
-      {rooms.length ? (
-        rooms.map(roomName => (
-          <RoomListButtons key={roomName.id} room={roomName} />
-        ))
-      ) : (
-        <span className='empty-message'>
-          You don't have any rooms in the project
-        </span>
-      )}
+      rooms.map(roomName => (
+      <RoomListButtons key={roomName.id} room={roomName} />
+      ))
     </div>
   </div>
 );
