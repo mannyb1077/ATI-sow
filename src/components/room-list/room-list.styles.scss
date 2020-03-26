@@ -1,13 +1,16 @@
 .room-preview {
-    width: 600px;
+    width: 800px;
+    height: 600px;
 
-
-    .buttons {
-        width: 380px;
-
+    .rooms {
+        display: flex;
         justify-content: space-between;
 
+    }
 
+    .empty-message {
+        font-size: 46px;
+        color: red;
 
     }
 }

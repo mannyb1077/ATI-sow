@@ -5,9 +5,9 @@ export const addRoom = room => ({
   payload: room
 });
 
-export const deleteRoom = id => ({
+export const deleteRoom = room => ({
   type: RoomActionTypes.DELETE_ROOM,
-  payload: id
+  payload: room
 });
 
 export const deleteAll = room => ({

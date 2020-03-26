@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e285ef81.chunk.css",
+    "main.js": "/static/js/main.dbb14a7a.chunk.js",
+    "main.js.map": "/static/js/main.dbb14a7a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.74ad06a3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.74ad06a3.js.map",
+    "static/js/2.06ee38e9.chunk.js": "/static/js/2.06ee38e9.chunk.js",
+    "static/js/2.06ee38e9.chunk.js.map": "/static/js/2.06ee38e9.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.58987dba8946c9735e4523fb9b4af127.js": "/precache-manifest.58987dba8946c9735e4523fb9b4af127.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.e285ef81.chunk.css.map": "/static/css/main.e285ef81.chunk.css.map",
+    "static/js/2.06ee38e9.chunk.js.LICENSE": "/static/js/2.06ee38e9.chunk.js.LICENSE",
+    "static/media/homepage.styles.scss": "/static/media/House.266c8468.jpg",
+    "static/media/add-room-page.styles.scss": "/static/media/House2.61a6d11d.jpg",
+    "static/media/ati.33891aba.svg": "/static/media/ati.33891aba.svg",
+    "static/media/sign-up.styles.scss": "/static/media/premium_audio-wallpaper-1366x768.fe295795.jpg",
+    "static/media/shopping-bag.30f07071.svg": "/static/media/shopping-bag.30f07071.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.74ad06a3.js",
+    "static/js/2.06ee38e9.chunk.js",
+    "static/css/main.e285ef81.chunk.css",
+    "static/js/main.dbb14a7a.chunk.js"
+  ]
+}

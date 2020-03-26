@@ -4,8 +4,8 @@ export const addRoomToRooms = (rooms, roomNameToAdd) => {
   );
 
   if (existingRoomName) {
-    return rooms.map(roomName =>
-      roomName.uuid === roomNameToAdd.uuid ? { ...roomName } : roomName
+    return alert(
+      "Room is already in the project, please type in a different name"
     );
   }
   return [...rooms, { ...roomNameToAdd }];
