@@ -4,20 +4,15 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import uuid from "uuid";
 //import PropTypes from "prop-types";
+import "./add-room-form.styles.scss";
+import { addRoom } from "../../redux/house/house.actions";
+import RoomSubmit from "../room-questions/room-submit";
 
 import initialState from "../../redux/house/questions.data";
 import ClientNameQuestion from "../room-questions/project-name-form";
 import RoomNameQuestion from "../room-questions/room-name-question.component";
 import EquipmentQuestions from "../room-questions/room-equipment-questions.component";
 import RoomNotesQuestion from "../room-questions/room-notes.component";
-
-import { addRoom } from "../../redux/house/house.actions";
-import RoomSubmit from "../room-questions/room-submit";
-//import FormInput from "../form-input/form-input.component";
-//import SubmitButton from "../submit-button/submit-button.component";
-
-import "./add-room-form.styles.scss";
-import { render } from "@testing-library/react";
 import TvQuestions from "../room-questions/tv-questions/tv-questions-component";
 import TvDetails from "../room-questions/tv-questions/tv-details.component";
 import WireQuantityQuestions from "../room-questions/tv-questions/tv-wire-questions.component";
@@ -25,6 +20,9 @@ import TvControlQuestions from "../room-questions/tv-questions/tv-controls.compo
 import RoomSourcesQuestions from "../room-questions/tv-questions/room-sources-question.component";
 import TvSourcesAudio from "../room-questions/tv-questions/tv-sources-audio.component";
 import AudioQuestions from "../room-questions/audio-questions/audio-questions.component";
+import AudioControls from "../room-questions/audio-questions/audio-controls-questions";
+import PhoneDataQuestion from "../room-questions/phone-data-questions/phone-data-question.component";
+import CameraQuestion from "../room-questions/phone-data-questions/camera-question.component";
 
 class AddNewRoomToCart extends React.Component {
   state = initialState;
@@ -41,7 +39,13 @@ class AddNewRoomToCart extends React.Component {
     this.setState({ [checked]: event.target.checked });
   };
 
-  handleSubmit = event => {};
+  handleSubmit = event => {
+    console.log("handle Submit");
+
+    const room = this.state;
+
+    this.props.dispatch(addRoom(room));
+  };
 
   handleFinalSubmit = event => {
     event.preventDefault();
@@ -81,7 +85,7 @@ class AddNewRoomToCart extends React.Component {
   };
 
   nextQuestion = () => {
-    const { question, tvZone, audioZone } = this.state;
+    const { question, tvZone, audioZone, dataZone } = this.state;
     this.setState({
       question: question + 1
     });
@@ -92,9 +96,20 @@ class AddNewRoomToCart extends React.Component {
     }
     if (question === 3 && tvZone === false && audioZone === false) {
       this.setState({
-        question: 41
+        question: 12
       });
     }
+    if (
+      question === 3 &&
+      tvZone === false &&
+      audioZone === false &&
+      dataZone === false
+    ) {
+      this.setState({
+        question: 13
+      });
+    }
+
     if (question === 9 && audioZone === false) {
       this.setState({
         question: 41
@@ -102,11 +117,26 @@ class AddNewRoomToCart extends React.Component {
     }
   };
   previousQuestion = () => {
-    const { question, tvZone } = this.state;
+    const { question, tvZone, audioZone, dataZone } = this.state;
     this.setState({
       question: question - 1
     });
     if (question === 10 && tvZone === false) {
+      this.setState({
+        question: 3
+      });
+    }
+    if (question === 12 && tvZone === false && audioZone === false) {
+      this.setState({
+        question: 3
+      });
+    }
+    if (
+      question === 12 &&
+      tvZone === false &&
+      audioZone === false &&
+      dataZone === false
+    ) {
       this.setState({
         question: 3
       });
@@ -146,7 +176,33 @@ class AddNewRoomToCart extends React.Component {
       distributedSources,
       localSources,
       dedicatedSourcesInRack,
-      otherSources
+      otherSources,
+      existingSpeakers,
+      newSpeakers,
+      inCeilingSpeakers,
+      inWallSpeakers,
+      bookShelfSpeakers,
+      towerSpeakers,
+      surroundSpeakers,
+      subInWall,
+      subPowered,
+      distributedAudio,
+      dedicatedAudioSource,
+      audioSourceOther,
+      audioKeypad,
+      audioTouchPanel,
+      audioIphone,
+      phoneLocation,
+      dataLocation,
+      apLocation,
+      apPowerLocation,
+      cameraNest,
+      cameraRing,
+      cameraNestDoorbell,
+      cameraRingDoorbell,
+      otherCloudCamera,
+      cameraWire,
+      cameraPower
     } = this.state;
     const values = {
       clientName,
@@ -179,7 +235,33 @@ class AddNewRoomToCart extends React.Component {
       distributedSources,
       localSources,
       dedicatedSourcesInRack,
-      otherSources
+      otherSources,
+      existingSpeakers,
+      newSpeakers,
+      inCeilingSpeakers,
+      inWallSpeakers,
+      bookShelfSpeakers,
+      towerSpeakers,
+      surroundSpeakers,
+      subInWall,
+      subPowered,
+      distributedAudio,
+      dedicatedAudioSource,
+      audioSourceOther,
+      audioKeypad,
+      audioTouchPanel,
+      audioIphone,
+      phoneLocation,
+      dataLocation,
+      apLocation,
+      apPowerLocation,
+      cameraNest,
+      cameraRing,
+      cameraNestDoorbell,
+      cameraRingDoorbell,
+      otherCloudCamera,
+      cameraWire,
+      cameraPower
     };
 
     switch (question) {
@@ -283,8 +365,35 @@ class AddNewRoomToCart extends React.Component {
           />
         );
       case 11:
-        return;
-
+        return (
+          <AudioControls
+            handleCheck={this.handleCheck}
+            handleChange={this.handleChange}
+            nextQuestion={this.nextQuestion}
+            previousQuestion={this.previousQuestion}
+            values={values}
+          />
+        );
+      case 12:
+        return (
+          <PhoneDataQuestion
+            handleCheck={this.handleCheck}
+            handleChange={this.handleChange}
+            nextQuestion={this.nextQuestion}
+            previousQuestion={this.previousQuestion}
+            values={values}
+          />
+        );
+      case 13:
+        return (
+          <CameraQuestion
+            handleCheck={this.handleCheck}
+            handleChange={this.handleChange}
+            nextQuestion={this.nextQuestion}
+            previousQuestion={this.previousQuestion}
+            values={values}
+          />
+        );
       case 25:
         return (
           <div>

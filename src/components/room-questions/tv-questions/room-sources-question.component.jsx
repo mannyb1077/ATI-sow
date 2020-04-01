@@ -16,7 +16,7 @@ class RoomSourcesQuestions extends React.Component {
     const { values, handleCheck, handleChange } = this.props;
     return (
       <div className='add-room'>
-        <h1>How is customer going to control TV </h1>
+        <h1>TV Sources </h1>
         <br />
         <br />
         <input

@@ -64,7 +64,7 @@ class TvControlQuestions extends React.Component {
           name='otherTvControls'
           value={values.otherTvControls}
           onChange={handleChange("otherTvControls")}
-          label='Other Control System. Please specify'
+          label='Other Control Method. Please specify'
           required
         />
 

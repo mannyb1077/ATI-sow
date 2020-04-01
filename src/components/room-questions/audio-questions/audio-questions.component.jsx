@@ -1,5 +1,4 @@
 import React from "react";
-import FormInput from "../../form-input/form-input.component";
 import SubmitButton from "../../submit-button/submit-button.component";
 
 class AudioQuestions extends React.Component {
@@ -11,130 +10,110 @@ class AudioQuestions extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+
   render() {
-    const { values, handleCheck, handleChange } = this.props;
+    const { values, handleCheck } = this.props;
     return (
       <div className='add-room'>
         <h1>Please select all that Apply</h1>
         <span></span>
         <br />
         <br />
-        <h2>TV:</h2>
+        <h2>Speakers:</h2>
         <input
           type='checkbox'
-          name='newTV'
-          value={values.newTV}
-          checked={this.props.newTV}
-          onChange={handleCheck("newTV")}
+          name='newSpeakers'
+          value={values.newSpeakers}
+          checked={this.props.newSpeakers}
+          onChange={handleCheck("newSpeakers")}
           label
         />
-        <label htmlFor=''>New TV</label>
+        <label htmlFor=''>New Speakers</label>
         <br />
         <input
           type='checkbox'
-          name='customerProvidedTV'
-          value={values.customerProvidedTV}
-          checked={this.props.customerProvidedTV}
-          onChange={handleCheck("customerProvidedTV")}
+          name='existingSpeakers'
+          value={values.existingSpeakers}
+          checked={this.props.existingSpeakers}
+          onChange={handleCheck("existingSpeakers")}
           label
         />
-        <label htmlFor=''>Customer Provided TV</label>
-        <br />
-
-        <h2>TV Mount:</h2>
-        <input
-          type='checkbox'
-          name='newTvMount'
-          value={values.newTvMount}
-          checked={this.props.newTvMount}
-          onChange={handleCheck("newTvMount")}
-          label
-        />
-        <label htmlFor=''>New TV Mount</label>
+        <label htmlFor=''>Existing Speakers</label>
         <br />
 
+        <h2>Speakers:</h2>
         <input
           type='checkbox'
-          name='customerProvidedTvMount'
-          value={values.customerProvidedTvMount}
-          checked={this.props.customerProvidedTvMount}
-          onChange={handleCheck("customerProvidedTvMount")}
+          name='inCeilingSpeakers'
+          value={values.inCeilingSpeakers}
+          checked={this.props.inCeilingSpeakers}
+          onChange={handleCheck("inCeilingSpeakers")}
           label
         />
-        <label htmlFor=''>Customer Provided TV Mount</label>
+        <label htmlFor=''>In-Ceiling Speakers</label>
         <br />
 
-        <h2>Mount Type:</h2>
         <input
           type='checkbox'
-          name='mountFlat'
-          value={values.tvLift}
-          checked={this.props.mountFlat}
-          onChange={handleCheck("mountFlat")}
+          name='inWallSpeakers'
+          value={values.inWallSpeakers}
+          checked={this.props.inWallSpeakers}
+          onChange={handleCheck("inWallSpeakers")}
           label
         />
-        <label htmlFor=''>Flat Mount</label>
+        <label htmlFor=''>In-Wall Speakers</label>
         <br />
-        <input
-          type='checkbox'
-          name='mountTilt'
-          value={values.tvLift}
-          checked={this.props.mountTilt}
-          onChange={handleCheck("mountTilt")}
-          label
-        />
-        <label htmlFor=''>Tilt Mount</label>
-        <br />
-        <input
-          type='checkbox'
-          name='mountArticulating'
-          value={values.mountArticulating}
-          checked={this.props.mountArticulating}
-          onChange={handleCheck("mountArticulating")}
-          label
-        />
-        <label htmlFor=''>Articulating Mount</label>
-        <br />
-        <input
-          type='checkbox'
-          name='mountTvStand'
-          value={values.mountTvStand}
-          checked={this.props.mountTvStand}
-          onChange={handleCheck("mountTvStand")}
-          label
-        />
-        <label htmlFor=''>TV Stand</label>
-        <br />
-        <input
-          type='checkbox'
-          name='mountTvLift'
-          value={values.mountTvLift}
-          checked={this.props.mountTvLift}
-          onChange={handleCheck("mountTvLift")}
-          label
-        />
-        <label htmlFor=''>TV Lift</label>
 
-        <FormInput
-          onSubmit={this.continue}
-          type='text'
-          name='mountOther'
-          value={values.mountOther}
-          onChange={handleChange("mountOther")}
-          label='Other Mount Type'
-          required
-        />
-
-        <h2>Pocket:</h2>
         <input
           type='checkbox'
-          name='tvPocket'
-          value={values.tvPocket}
-          checked={this.props.tvPocket}
-          onChange={handleCheck("tvPocket")}
+          name='bookShelfSpeakers'
+          value={values.bookShelfSpeakers}
+          checked={this.props.bookShelfSpeakers}
+          onChange={handleCheck("bookShelfSpeakers")}
           label
         />
-        <label htmlFor=''>TV going in a Pocket</label>
+        <label htmlFor=''>Bookshelf Speakers</label>
+        <br />
+        <input
+          type='checkbox'
+          name='towerSpeakers'
+          value={values.towerSpeakers}
+          checked={this.props.towerSpeakers}
+          onChange={handleCheck("towerSpeakers")}
+          label
+        />
+        <label htmlFor=''>Tower Speakers</label>
+        <br />
+        <input
+          type='checkbox'
+          name='surroundSpeakers'
+          value={values.surroundSpeakers}
+          checked={this.props.surroundSpeakers}
+          onChange={handleCheck("surroundSpeakers")}
+          label
+        />
+        <label htmlFor=''>Surround Speakers</label>
+        <br />
+        <h2>Subwoofer</h2>
+        <input
+          type='checkbox'
+          name='subInWall'
+          value={values.subInWall}
+          checked={this.props.subInWall}
+          onChange={handleCheck("subInWall")}
+          label
+        />
+        <label htmlFor=''>In-Wall Subwoofer</label>
+        <br />
+        <input
+          type='checkbox'
+          name='subPowered'
+          value={values.subPowered}
+          checked={this.props.subPowered}
+          onChange={handleCheck("subPowered")}
+          label
+        />
+        <label htmlFor=''>Powered Subwoofer</label>
         <br />
         <br />
         <div className='buttons'>

@@ -8,7 +8,7 @@ const initialState = {
   tvZone: false,
   projectorZone: false,
   audioZone: false,
-  phone_Data: false,
+  dataZone: false,
   cameraZone: false,
   //question 4 (TV Questions)
   customerProvidedTV: false,
@@ -66,9 +66,40 @@ const initialState = {
   inWallSpeakers: false,
   bookShelfSpeakers: false,
   towerSpeakers: false,
+  surroundSpeakers: false,
 
   subInWall: false,
   subPowered: "",
+
+  //question 11 (Audio Sources)
+  distributedAudio: false,
+  dedicatedAudioSource: false,
+  audioSourceOther: "",
+  audioKeypad: false,
+  audioTouchPanel: false,
+  audioIphone: false,
+
+  //question 12 (Phone/Data Location)
+  phoneLocation: false,
+  dataLocation: false,
+  apLocation: false,
+  apPowerLocation: false,
+
+  //question 13 (Camera Location)
+  cameraLocation: false,
+  cameraBullet: false,
+  cameraDome: false,
+  cameraPTZ: false,
+  cameraAnalog: false,
+  cameraIP: false,
+
+  cameraNest: false,
+  cameraRing: false,
+  cameraNestDoorbell: false,
+  cameraRingDoorbell: false,
+  otherCloudCamera: "",
+  cameraWire: "",
+  cameraPower: false,
 
   //questions 41-50 (Audio Info)
 
