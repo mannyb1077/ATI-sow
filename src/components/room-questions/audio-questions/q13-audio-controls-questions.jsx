@@ -3,11 +3,11 @@ import FormInput from "../../form-input/form-input.component";
 import SubmitButton from "../../submit-button/submit-button.component";
 
 class AudioControls extends React.Component {
-  continue = event => {
+  continue = (event) => {
     event.preventDefault();
     this.props.nextQuestion();
   };
-  previous = event => {
+  previous = (event) => {
     event.preventDefault();
     this.props.previousQuestion();
   };
@@ -34,8 +34,8 @@ class AudioControls extends React.Component {
           type='checkbox'
           name='dedicatedAudioSource'
           value={values.dedicatedAudioSource}
-          onChange={handleChange("dedicatedAudioSource")}
-          require
+          checked={this.props.dedicatedAudioSource}
+          onChange={handleCheck("dedicatedAudioSource")}
         />
         <label htmlFor=''>Dedicated Audio Source</label>
         <br />
@@ -96,5 +96,4 @@ class AudioControls extends React.Component {
     );
   }
 }
-
 export default AudioControls;

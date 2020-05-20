@@ -3,29 +3,36 @@ import { connect } from "react-redux";
 import {
   clearItemFromCart,
   addItem,
-  removeItem
+  removeItem,
 } from "../../redux/cart/cart.actions";
 
 import "./job-summary.styles.scss";
 
 //Displays cart item in a single card in pages/job-summary-item component
 const JobSummaryItem = ({ cartItem, clearItem, addItem, removeItem }) => {
-  const { roomName, imageUrl, itemName, type, size, quantity } = cartItem;
+  const {
+    roomName,
+    imageUrl,
+    tvZone,
+    projectorZone,
+    cameraZone,
+    newTV,
+  } = cartItem;
   return (
     <div className='job-summary-item'>
-      <span className='room'> {roomName}Room Name Goes Here!</span>
+      <span className='room'> {roomName}</span>
       <div className='image-container'>
         <img src={imageUrl} alt='item' />
       </div>
-      <span className='item'> {itemName} </span>
-      <span className='type'>{type}</span>
-      <span className='size'>{size}</span>
+      <span className='item'> {tvZone} </span>
+      <span className='type'>{projectorZone}</span>
+      <span className='size'>{cameraZone}</span>
       <span className='quantity'>
         <div className='arrow' onClick={() => removeItem(cartItem)}>
           {" "}
           &#10094;{" "}
         </div>
-        <span className='value'> {quantity} </span>
+        <span className='value'> {newTV} </span>
         <div className='arrow' onClick={() => addItem(cartItem)}>
           {" "}
           &#10095;{" "}
@@ -41,10 +48,10 @@ const JobSummaryItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  clearItem: item => dispatch(clearItemFromCart(item)),
-  addItem: item => dispatch(addItem(item)),
-  removeItem: item => dispatch(removeItem(item))
+const mapDispatchToProps = (dispatch) => ({
+  clearItem: (item) => dispatch(clearItemFromCart(item)),
+  addItem: (item) => dispatch(addItem(item)),
+  removeItem: (item) => dispatch(removeItem(item)),
 });
 
 export default connect(null, mapDispatchToProps)(JobSummaryItem);

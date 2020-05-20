@@ -4,20 +4,48 @@ import SubmitButton from "../../submit-button/submit-button.component";
 import FormInput from "../../form-input/form-input.component";
 
 class WireQuantityQuestions extends React.Component {
-  continue = event => {
+  continue = (event) => {
     event.preventDefault();
     this.props.nextQuestion();
   };
-  previous = event => {
+  previous = (event) => {
     event.preventDefault();
     this.props.previousQuestion();
   };
   render() {
-    const { values, handleChange } = this.props;
+    const { values, handleChange, handleCheck } = this.props;
     return (
       <div className='add-room'>
         <h1>Please tell us what wires we have at TV location from head-end </h1>
         <br />
+        <br />
+
+        <input
+          type='checkbox'
+          name='atiRtv'
+          value={values.atiRtv}
+          checked={this.props.atiRtv}
+          onChange={handleCheck("atiRtv")}
+        />
+        <label htmlFor=''>ATI RTV</label>
+        <br />
+        <input
+          type='checkbox'
+          name='atiFiberRtv'
+          value={values.atiFiberRtv}
+          checked={this.props.atiFiberRtv}
+          onChange={handleCheck("atiFiberRtv")}
+        />
+        <label htmlFor=''>ATI Fiber RTV</label>
+        <br />
+        <input
+          type='checkbox'
+          name='atiRtvWithSounbar'
+          value={values.atiRtvWithSounbar}
+          checked={this.props.atiRtvWithSounbar}
+          onChange={handleCheck("atiRtvWithSounbar")}
+        />
+        <label htmlFor=''>ATI RTV with Soundbar</label>
         <br />
         <FormInput
           onSubmit={this.continue}
@@ -26,7 +54,6 @@ class WireQuantityQuestions extends React.Component {
           value={values.wireC5Quantity}
           onChange={handleChange("wireC5Quantity")}
           label='How many Cat5 Wires do we have at TV Location?'
-          required
         />
         <FormInput
           onSubmit={this.continue}
@@ -35,7 +62,6 @@ class WireQuantityQuestions extends React.Component {
           value={values.wireC6Quantity}
           onChange={handleChange("wireC6Quantity")}
           label='How many Cat6 Wires do we have at TV Location?'
-          required
         />
 
         <FormInput
@@ -45,7 +71,6 @@ class WireQuantityQuestions extends React.Component {
           value={values.wireCoaxQuantity}
           onChange={handleChange("wireCoaxQuantity")}
           label='How many Coax Wires do we have at TV Location?'
-          required
         />
 
         <FormInput
@@ -55,7 +80,6 @@ class WireQuantityQuestions extends React.Component {
           value={values.wireFiberQuantity}
           onChange={handleChange("wireFiberQuantity")}
           label='How many Fiber Wires do we have at TV Location?'
-          required
         />
 
         <FormInput
@@ -65,7 +89,6 @@ class WireQuantityQuestions extends React.Component {
           value={values.wireSpeakerQuantity}
           onChange={handleChange("wireSpeakerQuantity")}
           label='How many Speaker Wires do we have at TV Location?'
-          required
         />
 
         <FormInput
@@ -75,7 +98,6 @@ class WireQuantityQuestions extends React.Component {
           value={values.wireOtherQuantity}
           onChange={handleChange("wireOtherQuantity")}
           label='Is there other type of wires?'
-          required
         />
         <FormInput
           onSubmit={this.continue}
@@ -84,7 +106,6 @@ class WireQuantityQuestions extends React.Component {
           value={values.conduitLocation}
           onChange={handleChange("conduitLocation")}
           label='Is there any conduit?'
-          required
         />
 
         <br />

@@ -2,11 +2,11 @@ import React from "react";
 import SubmitButton from "../../submit-button/submit-button.component";
 
 class AudioQuestions extends React.Component {
-  continue = event => {
+  continue = (event) => {
     event.preventDefault();
     this.props.nextQuestion();
   };
-  previous = event => {
+  previous = (event) => {
     event.preventDefault();
     this.props.previousQuestion();
   };
@@ -19,6 +19,7 @@ class AudioQuestions extends React.Component {
         <span></span>
         <br />
         <br />
+
         <h2>Speakers:</h2>
         <input
           type='checkbox'
@@ -26,7 +27,6 @@ class AudioQuestions extends React.Component {
           value={values.newSpeakers}
           checked={this.props.newSpeakers}
           onChange={handleCheck("newSpeakers")}
-          label
         />
         <label htmlFor=''>New Speakers</label>
         <br />
@@ -36,19 +36,17 @@ class AudioQuestions extends React.Component {
           value={values.existingSpeakers}
           checked={this.props.existingSpeakers}
           onChange={handleCheck("existingSpeakers")}
-          label
         />
         <label htmlFor=''>Existing Speakers</label>
         <br />
 
-        <h2>Speakers:</h2>
+        <h2>Speaker Type:</h2>
         <input
           type='checkbox'
           name='inCeilingSpeakers'
           value={values.inCeilingSpeakers}
           checked={this.props.inCeilingSpeakers}
           onChange={handleCheck("inCeilingSpeakers")}
-          label
         />
         <label htmlFor=''>In-Ceiling Speakers</label>
         <br />
@@ -59,7 +57,6 @@ class AudioQuestions extends React.Component {
           value={values.inWallSpeakers}
           checked={this.props.inWallSpeakers}
           onChange={handleCheck("inWallSpeakers")}
-          label
         />
         <label htmlFor=''>In-Wall Speakers</label>
         <br />
@@ -70,7 +67,6 @@ class AudioQuestions extends React.Component {
           value={values.bookShelfSpeakers}
           checked={this.props.bookShelfSpeakers}
           onChange={handleCheck("bookShelfSpeakers")}
-          label
         />
         <label htmlFor=''>Bookshelf Speakers</label>
         <br />
@@ -80,7 +76,6 @@ class AudioQuestions extends React.Component {
           value={values.towerSpeakers}
           checked={this.props.towerSpeakers}
           onChange={handleCheck("towerSpeakers")}
-          label
         />
         <label htmlFor=''>Tower Speakers</label>
         <br />
@@ -90,10 +85,30 @@ class AudioQuestions extends React.Component {
           value={values.surroundSpeakers}
           checked={this.props.surroundSpeakers}
           onChange={handleCheck("surroundSpeakers")}
-          label
         />
         <label htmlFor=''>Surround Speakers</label>
         <br />
+
+        <input
+          type='checkbox'
+          name='soundbar'
+          value={values.soundbar}
+          checked={this.props.soundbar}
+          onChange={handleCheck("soundbar")}
+        />
+        <label htmlFor=''>Soundbar</label>
+        <br />
+
+        <input
+          type='checkbox'
+          name='dosSpeakers'
+          value={values.dosSpeakers}
+          checked={this.props.dosSpeakers}
+          onChange={handleCheck("dosSpeakers")}
+        />
+        <label htmlFor=''>DOS System</label>
+        <br />
+
         <h2>Subwoofer</h2>
         <input
           type='checkbox'
@@ -101,7 +116,6 @@ class AudioQuestions extends React.Component {
           value={values.subInWall}
           checked={this.props.subInWall}
           onChange={handleCheck("subInWall")}
-          label
         />
         <label htmlFor=''>In-Wall Subwoofer</label>
         <br />
@@ -111,7 +125,6 @@ class AudioQuestions extends React.Component {
           value={values.subPowered}
           checked={this.props.subPowered}
           onChange={handleCheck("subPowered")}
-          label
         />
         <label htmlFor=''>Powered Subwoofer</label>
         <br />

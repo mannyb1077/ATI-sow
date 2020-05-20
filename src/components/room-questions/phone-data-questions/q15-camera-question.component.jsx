@@ -3,11 +3,11 @@ import FormInput from "../../form-input/form-input.component";
 import SubmitButton from "../../submit-button/submit-button.component";
 
 class CameraQuestion extends React.Component {
-  continue = event => {
+  continue = (event) => {
     event.preventDefault();
     this.props.nextQuestion();
   };
-  previous = event => {
+  previous = (event) => {
     event.preventDefault();
     this.props.previousQuestion();
   };
@@ -55,7 +55,8 @@ class CameraQuestion extends React.Component {
           type='checkbox'
           name='cameraAnalog'
           value={values.cameraAnalog}
-          onChange={handleChange("cameraAnalog")}
+          checked={this.props.cameraAnalog}
+          onChange={handleCheck("cameraAnalog")}
           require
         />
         <label htmlFor=''>Analog Camera</label>
@@ -64,7 +65,8 @@ class CameraQuestion extends React.Component {
           type='checkbox'
           name='cameraIP'
           value={values.cameraIP}
-          onChange={handleChange("cameraIP")}
+          checked={this.props.cameraIP}
+          onChange={handleCheck("cameraIP")}
           require
         />
         <label htmlFor=''>IP Camera</label>
@@ -74,7 +76,8 @@ class CameraQuestion extends React.Component {
           type='checkbox'
           name='cameraNest'
           value={values.cameraNest}
-          onChange={handleChange("cameraNest")}
+          checked={this.props.cameraNest}
+          onChange={handleCheck("cameraNest")}
           require
         />
         <label htmlFor=''>Nest Camera</label>
@@ -83,7 +86,8 @@ class CameraQuestion extends React.Component {
           type='checkbox'
           name='cameraRing'
           value={values.cameraRing}
-          onChange={handleChange("cameraRing")}
+          checked={this.props.cameraRing}
+          onChange={handleCheck("cameraRing")}
           require
         />
         <label htmlFor=''>Ring Camera</label>
@@ -92,7 +96,8 @@ class CameraQuestion extends React.Component {
           type='checkbox'
           name='cameraNestDoorbell'
           value={values.cameraNestDoorbell}
-          onChange={handleChange("cameraNestDoorbell")}
+          checked={this.props.cameraNestDoorbell}
+          onChange={handleCheck("cameraNestDoorbell")}
           require
         />
         <label htmlFor=''>Nest Doorbell</label>
@@ -101,7 +106,8 @@ class CameraQuestion extends React.Component {
           type='checkbox'
           name='cameraRingDoorbell'
           value={values.cameraRingDoorbell}
-          onChange={handleChange("cameraRingDoorbell")}
+          checked={this.props.cameraRingDoorbell}
+          onChange={handleCheck("cameraRingDoorbell")}
           require
         />
         <label htmlFor=''>Ring Doorbell</label>
@@ -111,7 +117,8 @@ class CameraQuestion extends React.Component {
           type='checkbox'
           name='cameraPower'
           value={values.cameraPower}
-          onChange={handleChange("cameraPower")}
+          checked={this.props.cameraPower}
+          onChange={handleCheck("cameraPower")}
           require
         />
         <label htmlFor=''>Power at camera location</label>
@@ -129,7 +136,7 @@ class CameraQuestion extends React.Component {
           name='cameraWire'
           value={values.cameraWire}
           onChange={handleChange("cameraWire")}
-          label='What wire do we have at Camera location'
+          label='What wire do we have at Camera location?'
         />
 
         <br />

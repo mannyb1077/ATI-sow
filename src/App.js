@@ -10,7 +10,8 @@ import EquipmentPage from "./pages/equipment/equipment.component";
 import NavBar from "./components/NavBar/NavBar-component";
 import LogInPage from "./pages/log-in/log-in.component";
 import SignUpPage from "./pages/sign-up/sign-up-component";
-import JobSummaryPage from "./pages/job-summary/job-summary.component";
+//import JobSummaryPage from "./pages/job-summary/job-summary.component";
+import RoomSummaryPage from "./pages/room-summary/room-summary.component";
 import AddRoomPage from "./pages/add-room-page/add-room-page.component";
 import EditRoomNamePage from "./pages/edit-room-name-page/edit-room-name-page.component";
 
@@ -36,15 +37,15 @@ class App extends React.Component {
   componentDidMount() {
     const { setCurrentUser } = this.props;
 
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
-        userRef.onSnapshot(snapShot => {
+        userRef.onSnapshot((snapShot) => {
           setCurrentUser({
             id: snapShot.id,
             name: snapShot.displayName,
-            ...snapShot.data()
+            ...snapShot.data(),
           });
         });
       } else {
@@ -65,7 +66,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/home' component={HomePage} />
-          <Route path='/summary' component={JobSummaryPage} />
+          <Route path='/summary' component={RoomSummaryPage} />
           <Route path='/home/equipment' component={EquipmentPage} />
           <Route exact path='/home/addroom' component={AddRoomPage} />
           <Route exact path='/home/editroom/:id' component={EditRoomNamePage} />
@@ -93,11 +94,11 @@ class App extends React.Component {
 
 // Tracks Current User
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

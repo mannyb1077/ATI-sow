@@ -1,18 +1,17 @@
 import React from "react";
-import FormInput from "../../form-input/form-input.component";
 import SubmitButton from "../../submit-button/submit-button.component";
 
 class PhoneDataQuestion extends React.Component {
-  continue = event => {
+  continue = (event) => {
     event.preventDefault();
     this.props.nextQuestion();
   };
-  previous = event => {
+  previous = (event) => {
     event.preventDefault();
     this.props.previousQuestion();
   };
   render() {
-    const { values, handleCheck, handleChange } = this.props;
+    const { values, handleCheck } = this.props;
     return (
       <div className='add-room'>
         <h1>Is there a Phone or Data location in this room?</h1>
@@ -35,8 +34,8 @@ class PhoneDataQuestion extends React.Component {
           type='checkbox'
           name='dataLocation'
           value={values.dataLocation}
-          onChange={handleChange("dataLocation")}
-          require
+          checked={this.props.dataLocation}
+          onChange={handleCheck("dataLocation")}
         />
         <label htmlFor=''>Data Jack</label>
         <br />
@@ -45,8 +44,8 @@ class PhoneDataQuestion extends React.Component {
           type='checkbox'
           name='apLocation'
           value={values.apLocation}
-          onChange={handleChange("apLocation")}
-          require
+          checked={this.props.apLocation}
+          onChange={handleCheck("apLocation")}
         />
         <label htmlFor=''>Access Point Location</label>
         <br />
@@ -54,8 +53,8 @@ class PhoneDataQuestion extends React.Component {
           type='checkbox'
           name='apPowerLocation'
           value={values.apPowerLocation}
-          onChange={handleChange("apPowerLocation")}
-          require
+          checked={this.props.apPowerLocation}
+          onChange={handleCheck("apPowerLocation")}
         />
         <label htmlFor=''>Power at Access Point location</label>
         <br />

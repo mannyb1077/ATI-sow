@@ -13,7 +13,7 @@ import houseReducer from "./house/house.reducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["cart", "house"]
+  whitelist: ["cart", "house"],
 };
 
 const rootReducer = combineReducers({
@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
   directory: directoryReducer,
   house: houseReducer,
   equipment: equipmentReducer,
-  cart: cartReducer
+  cart: cartReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

@@ -4,7 +4,7 @@ import { createStructuredSelector } from "reselect";
 
 import {
   selectCartItems,
-  selectCartTotal
+  selectCartTotal,
 } from "../../redux/cart/cart.selectors";
 
 import JobSummaryItem from "../../components/job-summary-item/job-summary-item.component";
@@ -37,7 +37,7 @@ const JobSummaryPage = ({ cartItems }) => (
         <span>Delete</span>
       </div>
     </div>
-    {cartItems.map(cartItem => (
+    {cartItems.map((cartItem) => (
       <JobSummaryItem key={cartItem.id} cartItem={cartItem} />
     ))}
   </div>
@@ -45,7 +45,7 @@ const JobSummaryPage = ({ cartItems }) => (
 
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
-  total: selectCartTotal
+  total: selectCartTotal,
 });
 
 export default connect(mapStateToProps)(JobSummaryPage);

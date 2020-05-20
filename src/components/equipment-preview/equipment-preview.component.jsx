@@ -7,7 +7,7 @@ import "./equipment-preview.styles.scss";
 // Equipment to choose from Equipment Page.  4 items per row
 const EquipmentPreview = ({ title, routeName }) => (
   <div className='equipment-preview'>
-    <h1 className='title'> {title.toUpperCase()} </h1>
+    <h1 className='title'> {title} </h1>
 
     <div className='overview-page-buttons'>
       <div className='buttons'>

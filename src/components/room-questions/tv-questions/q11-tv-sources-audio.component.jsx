@@ -1,13 +1,12 @@
 import React from "react";
-
 import SubmitButton from "../../submit-button/submit-button.component";
 
 class TvSourcesAudio extends React.Component {
-  continue = event => {
+  continue = (event) => {
     event.preventDefault();
     this.props.nextQuestion();
   };
-  previous = event => {
+  previous = (event) => {
     event.preventDefault();
     this.props.previousQuestion();
   };
@@ -24,18 +23,26 @@ class TvSourcesAudio extends React.Component {
           value={values.tvSourcesTvAudio}
           checked={this.props.tvSourcesTvAudio}
           onChange={handleCheck("tvSourcesTvAudio")}
-          label
         />
         <label htmlFor=''>TV Audio</label>
+        <br />
         <input
           type='checkbox'
           name='tvSourcesOverheadAudio'
           value={values.tvSourcesOverheadAudio}
           checked={this.props.tvSourcesOverheadAudio}
           onChange={handleCheck("tvSourcesOverheadAudio")}
-          label
         />
         <label htmlFor=''>Overhead Audio</label>
+        <br />
+        <input
+          type='checkbox'
+          name='tvSourcesLocalSoundbar'
+          value={values.tvSourcesLocalSoundbar}
+          checked={this.props.tvSourcesLocalSoundbar}
+          onChange={handleCheck("tvSourcesLocalSoundbar")}
+        />
+        <label htmlFor=''>Sounbar Audio</label>
         <br />
         <br />
         <div className='buttons'>

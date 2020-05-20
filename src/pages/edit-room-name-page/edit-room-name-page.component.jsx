@@ -6,13 +6,13 @@ import FormInput from "../../components/form-input/form-input.component";
 import SubmitButton from "../../components/submit-button/submit-button.component";
 
 import "./edit-room-name-page.styles.scss";
-import roomListButtonsComponent from "../../components/room-list-buttons/room-list-buttons.component";
+//import roomListButtonsComponent from "../../components/room-list-buttons/room-list-buttons.component";
 
-const EditRoomName = props => {
+const EditRoomName = (props) => {
   return (
     <div className='add-room'>
       <h2>Editing Room id: {props.match.params.id}</h2>
-      <h3>Editing Room Name: {props.match.params.rooms} </h3>
+      <h3>Editing Room Name: {props.match.params.roomName} </h3>
       <span>Type New Room Name</span>
 
       <form className='add-room'>
@@ -35,14 +35,6 @@ const EditRoomName = props => {
           placeholder='Add some notes about this room'
         ></textarea>
 
-        {/* <FormInput
-          type='text'
-          name='roomNotes'
-          value={""}
-          handleChange={""}
-          label='Room Notes'
-        /> */}
-
         <div className='buttons'>
           <SubmitButton type='submit'>Submit Changes</SubmitButton>
           <Link className='cancel' to={`/home/addroom`}>
@@ -58,9 +50,9 @@ const mapDispatchToProps = (state, props) => {
   console.log(state.house.rooms);
   return {
     rooms: state.house.rooms.find(
-      roomName => roomName.id === props.match.params.id,
+      (roomName) => roomName.id === props.match.params.id,
       console.log(state.house.rooms)
-    )
+    ),
   };
 };
 

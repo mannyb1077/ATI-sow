@@ -4,7 +4,7 @@ import SubmitButton from "../submit-button/submit-button.component";
 import FormInput from "../form-input/form-input.component";
 
 class ClientNameQuestion extends React.Component {
-  continue = event => {
+  continue = (event) => {
     event.preventDefault();
     this.props.nextQuestion();
   };

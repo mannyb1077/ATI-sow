@@ -7,9 +7,9 @@ const INITIAL_STATE = {
   rooms: [
     {
       id: 0,
-      roomName: ""
-    }
-  ]
+      roomName: "",
+    },
+  ],
 };
 
 const houseReducer = (state = INITIAL_STATE, action) => {
@@ -17,12 +17,12 @@ const houseReducer = (state = INITIAL_STATE, action) => {
     case RoomActionTypes.ADD_ROOM:
       return {
         ...state,
-        rooms: [...state.rooms, action.payload]
+        rooms: [...state.rooms, action.payload],
       };
     case RoomActionTypes.DELETE_ROOM:
       return {
         ...state,
-        rooms: state.rooms.filter(room => room.id !== action.payload.id)
+        rooms: state.rooms.filter((room) => room.id !== action.payload.id),
       };
 
     default:

@@ -12,7 +12,7 @@ const RoomList = ({ rooms }) => (
   <div className='room-preview'>
     <div className='rooms'>
       {rooms.length ? (
-        rooms.map(roomName => (
+        rooms.map((roomName) => (
           <RoomListButtons key={roomName.id} room={roomName} />
         ))
       ) : (
@@ -25,7 +25,7 @@ const RoomList = ({ rooms }) => (
 );
 
 const mapStateToProps = createStructuredSelector({
-  rooms: selectRooms
+  rooms: selectRooms,
 });
 
 export default withRouter(connect(mapStateToProps)(RoomList));

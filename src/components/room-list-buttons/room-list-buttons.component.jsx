@@ -28,8 +28,8 @@ const RoomListButtons = ({ deleteRoom, room }) => {
     </div>
   );
 };
-const mapDispatchToProps = dispatch => ({
-  deleteRoom: room => dispatch(deleteRoom(room))
+const mapDispatchToProps = (dispatch) => ({
+  deleteRoom: (room) => dispatch(deleteRoom(room)),
 });
 
 export default connect(null, mapDispatchToProps)(RoomListButtons);

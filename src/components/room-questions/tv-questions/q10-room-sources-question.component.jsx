@@ -4,11 +4,11 @@ import SubmitButton from "../../submit-button/submit-button.component";
 import FormInput from "../../form-input/form-input.component";
 
 class RoomSourcesQuestions extends React.Component {
-  continue = event => {
+  continue = (event) => {
     event.preventDefault();
     this.props.nextQuestion();
   };
-  previous = event => {
+  previous = (event) => {
     event.preventDefault();
     this.props.previousQuestion();
   };
@@ -25,27 +25,24 @@ class RoomSourcesQuestions extends React.Component {
           value={values.distributedSources}
           checked={this.props.distributedSources}
           onChange={handleCheck("distributedSources")}
-          label
         />
-        <label htmlFor=''>Distrubeted Sources</label>
-
+        <label htmlFor=''>Distributed Sources</label>
+        <br />
         <input
           type='checkbox'
           name='localSources'
           value={values.localSources}
           checked={this.props.localSources}
           onChange={handleCheck("localSources")}
-          label
         />
         <label htmlFor=''>Local Sources</label>
-
+        <br />
         <input
           type='checkbox'
           name='dedicatedSourcesInRack'
           value={values.dedicatedSourcesInRack}
           checked={this.props.dedicatedSourcesInRack}
           onChange={handleCheck("dedicatedSourcesInRack")}
-          label
         />
         <label htmlFor=''>Dedicated Sources located in equipment room</label>
 
@@ -58,7 +55,6 @@ class RoomSourcesQuestions extends React.Component {
           label='Other. Please specify'
           required
         />
-
         <br />
         <br />
         <div className='buttons'>

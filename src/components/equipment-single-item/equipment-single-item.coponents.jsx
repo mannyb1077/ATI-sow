@@ -8,33 +8,34 @@ import "./equipment-single-item.styles.scss";
 //Creates equipmnent single item component
 const EquipmentSingleItem = ({ item, addItem }) => {
   const { itemName, imageUrl, type } = item;
+
   return (
     <div className='equipment-single-item'>
-      <div
+      {/* Displays equipment image in equipment page */}
+      {/* <div
         className='image'
         style={{
-          backgroundImage: `url(${imageUrl})`
+          backgroundImage: `url(${imageUrl})`,
         }}
-      />
+      /> */}
+
       {/* Displays Item Information at bottom of item */}
-      <div className='equipment-single-item-footer'>
+      {/* <div className='equipment-single-item-footer'>
         <span className='type'>{type}</span>
         <span className='name'>{itemName}</span>
-        {/* <span className='size'>{size}</span> */}
-      </div>
+      </div> */}
 
-      {/* Adds Add to Room button at equipment single item component */}
+      {/* Adds "Add to Room" button at equipment single item component */}
       <SubmitButton onClick={() => addItem(item)} inverted>
-        {" "}
-        Add to Room
+        {itemName}
       </SubmitButton>
     </div>
   );
 };
 
 // Adds single item to Cart
-const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item))
+const mapDispatchToProps = (dispatch) => ({
+  addItem: (item) => dispatch(addItem(item)),
 });
 
 export default connect(null, mapDispatchToProps)(EquipmentSingleItem);

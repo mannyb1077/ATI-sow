@@ -1,0 +1,23 @@
+.room-summary-item {
+    width: 100%;
+    display: flex;
+    min-height: 100px;
+    border-bottom: 1px solid darkgrey;
+    padding: 15px 0;
+    font-size: 20px;
+    align-items: center;
+
+    .room,
+    .tv,
+    .projector,
+    .camera,
+    .audio,
+    .data {
+        width: 25%;
+    }
+
+    .delete-button {
+        //padding-left: 12px;
+        cursor: pointer;
+    }
+}

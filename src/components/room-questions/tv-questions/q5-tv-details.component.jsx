@@ -3,11 +3,11 @@ import FormInput from "../../form-input/form-input.component";
 import SubmitButton from "../../submit-button/submit-button.component";
 
 class TvDetails extends React.Component {
-  continue = event => {
+  continue = (event) => {
     event.preventDefault();
     this.props.nextQuestion();
   };
-  previous = event => {
+  previous = (event) => {
     event.preventDefault();
     this.props.previousQuestion();
   };
@@ -15,7 +15,7 @@ class TvDetails extends React.Component {
     const { values, handleChange } = this.props;
     return (
       <div className='add-room'>
-        <h1>Please select all that Apply?</h1>
+        <h1>Please provide as much information as possible</h1>
         <span></span>
 
         <FormInput
@@ -45,16 +45,6 @@ class TvDetails extends React.Component {
           value={values.tvSize}
           onChange={handleChange("tvSize")}
           label='TV Size'
-          required
-        />
-
-        <FormInput
-          onSubmit={this.continue}
-          type='text'
-          name='pocketSize'
-          value={values.pocketSize}
-          onChange={handleChange("pocketSize")}
-          label='Pocket Dimensions (If applicable)'
           required
         />
         <br />
