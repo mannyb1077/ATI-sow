@@ -12,6 +12,12 @@ class RoomNameQuestion extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
   render() {
     const { values, handleChange } = this.props;
     return (
@@ -20,11 +26,11 @@ class RoomNameQuestion extends React.Component {
         <span>Use ML, UL, LL to specify room locations</span>
 
         <FormInput
-          onSubmit={this.continue}
           type='text'
           name='roomName'
           value={values.roomName}
           onChange={handleChange("roomName")}
+          onKeyPress={this.onKeyPress}
           label='Room Name'
         />
         <br />

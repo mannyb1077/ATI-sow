@@ -10,6 +10,12 @@ class EquipmentQuestions extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
   render() {
     const { values, handleCheck } = this.props;
     return (
@@ -18,39 +24,37 @@ class EquipmentQuestions extends React.Component {
         <span></span>
         <br />
         <br />
-
         <input
           type='checkbox'
           name='tvZone'
           value={values.tvZone}
           checked={this.props.tvZone}
           onChange={handleCheck("tvZone")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Does this room have a TV?</label>
-
         <br />
         <br />
-
         <input
           type='checkbox'
           name='audioZone'
           value={values.audioZone}
           checked={this.props.audioZone}
           onChange={handleCheck("audioZone")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Does this room have Speakers?</label>
         <br />
         <br />
-
         <input
           type='checkbox'
           name='dataZone'
           value={values.dataZone}
           checked={this.props.dataZone}
           onChange={handleCheck("dataZone")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Does this room have a Phone/Data Location?</label>
-
         <br />
         <br />
         <input
@@ -59,22 +63,22 @@ class EquipmentQuestions extends React.Component {
           value={values.cameraZone}
           checked={this.props.cameraZone}
           onChange={handleCheck("cameraZone")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Does this room have a Camera Location?</label>
         <br />
         <br />
-
         <input
           type='checkbox'
           name='projectorZone'
           value={values.projectorZone}
           checked={this.props.projectorZone}
           onChange={handleCheck("projectorZone")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Does this room have a Projector?</label>
         <br />
         <br />
-
         <div className='buttons'>
           <SubmitButton type='submit' onClick={this.previous} inverted>
             Previous

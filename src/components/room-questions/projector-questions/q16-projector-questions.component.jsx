@@ -11,6 +11,13 @@ class ProjectorDetails extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
+
   render() {
     const { values, handleCheck, handleChange } = this.props;
     return (
@@ -26,6 +33,7 @@ class ProjectorDetails extends React.Component {
           value={values.projectorNew}
           checked={this.props.projectorNew}
           onChange={handleCheck("projectorNew")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>New Projector</label>
         <br />
@@ -35,6 +43,7 @@ class ProjectorDetails extends React.Component {
           value={values.projectorCustomerProvided}
           checked={this.props.projectorCustomerProvided}
           onChange={handleCheck("projectorCustomerProvided")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Customer Provided Projector</label>
         <br />
@@ -46,6 +55,7 @@ class ProjectorDetails extends React.Component {
           value={values.projectorMountNew}
           checked={this.props.projectorMountNew}
           onChange={handleCheck("projectorMountNew")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>New Projector Mount</label>
         <br />
@@ -56,7 +66,7 @@ class ProjectorDetails extends React.Component {
           value={values.customerProvidedTvMount}
           checked={this.props.customerProvidedTvMount}
           onChange={handleCheck("customerProvidedTvMount")}
-          label
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Customer Provided TV Mount</label>
         <br />
@@ -68,6 +78,7 @@ class ProjectorDetails extends React.Component {
           name='projectorBrand'
           value={values.projectorBrand}
           onChange={handleChange("projectorBrand")}
+          onKeyPress={this.onKeyPress}
           label='Projector Brand'
         />
         <FormInput
@@ -76,6 +87,7 @@ class ProjectorDetails extends React.Component {
           name='projectorModel'
           value={values.projectorModel}
           onChange={handleChange("projectorModel")}
+          onKeyPress={this.onKeyPress}
           label='Projector Model'
         />
 
@@ -86,33 +98,37 @@ class ProjectorDetails extends React.Component {
           value={values.projectorIr}
           checked={this.props.projectorIr}
           onChange={handleCheck("projectorIr")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>IR</label>
-
+        <br />
         <input
           type='checkbox'
           name='projectorRs232'
           value={values.projectorRs232}
           checked={this.props.projectorRs232}
           onChange={handleCheck("projectorRs232")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>RS-232</label>
-
+        <br />
         <input
           type='checkbox'
           name='projectorIP'
           value={values.projectorIP}
           checked={this.props.projectorIP}
           onChange={handleCheck("projectorIP")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>IP</label>
-
+        <br />
         <FormInput
           onSubmit={this.continue}
           type='text'
           name='projectorDrop'
           value={values.projectorDrop}
           onChange={handleChange("projectorDrop")}
+          onKeyPress={this.onKeyPress}
           label='Projector Drop in inches'
         />
         <br />

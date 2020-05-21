@@ -12,6 +12,13 @@ class RoomSourcesQuestions extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
+
   render() {
     const { values, handleCheck, handleChange } = this.props;
     return (
@@ -25,6 +32,7 @@ class RoomSourcesQuestions extends React.Component {
           value={values.distributedSources}
           checked={this.props.distributedSources}
           onChange={handleCheck("distributedSources")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Distributed Sources</label>
         <br />
@@ -34,6 +42,7 @@ class RoomSourcesQuestions extends React.Component {
           value={values.localSources}
           checked={this.props.localSources}
           onChange={handleCheck("localSources")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Local Sources</label>
         <br />
@@ -43,6 +52,7 @@ class RoomSourcesQuestions extends React.Component {
           value={values.dedicatedSourcesInRack}
           checked={this.props.dedicatedSourcesInRack}
           onChange={handleCheck("dedicatedSourcesInRack")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Dedicated Sources located in equipment room</label>
 
@@ -52,8 +62,8 @@ class RoomSourcesQuestions extends React.Component {
           name='otherSources'
           value={values.otherSources}
           onChange={handleChange("otherSources")}
+          onKeyPress={this.onKeyPress}
           label='Other. Please specify'
-          required
         />
         <br />
         <br />

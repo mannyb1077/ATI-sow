@@ -12,6 +12,13 @@ class WireQuantityQuestions extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
+
   render() {
     const { values, handleChange, handleCheck } = this.props;
     return (
@@ -26,6 +33,7 @@ class WireQuantityQuestions extends React.Component {
           value={values.atiRtv}
           checked={this.props.atiRtv}
           onChange={handleCheck("atiRtv")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>ATI RTV</label>
         <br />
@@ -35,6 +43,7 @@ class WireQuantityQuestions extends React.Component {
           value={values.atiFiberRtv}
           checked={this.props.atiFiberRtv}
           onChange={handleCheck("atiFiberRtv")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>ATI Fiber RTV</label>
         <br />
@@ -44,6 +53,7 @@ class WireQuantityQuestions extends React.Component {
           value={values.atiRtvWithSounbar}
           checked={this.props.atiRtvWithSounbar}
           onChange={handleCheck("atiRtvWithSounbar")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>ATI RTV with Soundbar</label>
         <br />
@@ -53,6 +63,7 @@ class WireQuantityQuestions extends React.Component {
           name='wireC5Quantity'
           value={values.wireC5Quantity}
           onChange={handleChange("wireC5Quantity")}
+          onKeyPress={this.onKeyPress}
           label='How many Cat5 Wires do we have at TV Location?'
         />
         <FormInput
@@ -61,6 +72,7 @@ class WireQuantityQuestions extends React.Component {
           name='wireC6Quantity'
           value={values.wireC6Quantity}
           onChange={handleChange("wireC6Quantity")}
+          onKeyPress={this.onKeyPress}
           label='How many Cat6 Wires do we have at TV Location?'
         />
 
@@ -70,6 +82,7 @@ class WireQuantityQuestions extends React.Component {
           name='wireCoaxQuantity'
           value={values.wireCoaxQuantity}
           onChange={handleChange("wireCoaxQuantity")}
+          onKeyPress={this.onKeyPress}
           label='How many Coax Wires do we have at TV Location?'
         />
 
@@ -79,6 +92,7 @@ class WireQuantityQuestions extends React.Component {
           name='wireFiberQuantity'
           value={values.wireFiberQuantity}
           onChange={handleChange("wireFiberQuantity")}
+          onKeyPress={this.onKeyPress}
           label='How many Fiber Wires do we have at TV Location?'
         />
 
@@ -88,6 +102,7 @@ class WireQuantityQuestions extends React.Component {
           name='wireSpeakerQuantity'
           value={values.wireSpeakerQuantity}
           onChange={handleChange("wireSpeakerQuantity")}
+          onKeyPress={this.onKeyPress}
           label='How many Speaker Wires do we have at TV Location?'
         />
 
@@ -97,6 +112,7 @@ class WireQuantityQuestions extends React.Component {
           name='wireOtherQuantity'
           value={values.wireOtherQuantity}
           onChange={handleChange("wireOtherQuantity")}
+          onKeyPress={this.onKeyPress}
           label='Is there other type of wires?'
         />
         <FormInput
@@ -105,6 +121,7 @@ class WireQuantityQuestions extends React.Component {
           name='conduitLocation'
           value={values.conduitLocation}
           onChange={handleChange("conduitLocation")}
+          onKeyPress={this.onKeyPress}
           label='Is there any conduit?'
         />
 

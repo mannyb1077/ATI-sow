@@ -11,7 +11,12 @@ class TvQuestions extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
-
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
   render() {
     const { values, handleCheck, handleChange } = this.props;
     return (
@@ -27,6 +32,7 @@ class TvQuestions extends React.Component {
           value={values.newTV}
           checked={this.props.newTV}
           onChange={handleCheck("newTV")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>New TV</label>
         <br />
@@ -36,6 +42,7 @@ class TvQuestions extends React.Component {
           value={values.customerProvidedTV}
           checked={this.props.customerProvidedTV}
           onChange={handleCheck("customerProvidedTV")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Customer Provided TV</label>
         <br />
@@ -47,6 +54,7 @@ class TvQuestions extends React.Component {
           value={values.newTvMount}
           checked={this.props.newTvMount}
           onChange={handleCheck("newTvMount")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>New TV Mount</label>
         <br />
@@ -56,6 +64,7 @@ class TvQuestions extends React.Component {
           value={values.customerProvidedTvMount}
           checked={this.props.customerProvidedTvMount}
           onChange={handleCheck("customerProvidedTvMount")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Customer Provided TV Mount</label>
         <br />
@@ -65,6 +74,7 @@ class TvQuestions extends React.Component {
           value={values.mountTvStand}
           checked={this.props.mountTvStand}
           onChange={handleCheck("mountTvStand")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>TV Stand</label>
         <br />
@@ -74,6 +84,7 @@ class TvQuestions extends React.Component {
           value={values.mountTvLift}
           checked={this.props.mountTvLift}
           onChange={handleCheck("mountTvLift")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>TV Lift</label>
         <FormInput
@@ -82,6 +93,7 @@ class TvQuestions extends React.Component {
           name='mountOther'
           value={values.mountOther}
           onChange={handleChange("mountOther")}
+          onKeyPress={this.onKeyPress}
           label='Other Mount Type'
         />
 
@@ -93,6 +105,7 @@ class TvQuestions extends React.Component {
           value={values.backBox}
           checked={this.props.backBox}
           onChange={handleCheck("backBox")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Small Back Box</label>
 
@@ -105,6 +118,7 @@ class TvQuestions extends React.Component {
           value={values.tvPocket}
           checked={this.props.tvPocket}
           onChange={handleCheck("tvPocket")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Pocket</label>
         <br />

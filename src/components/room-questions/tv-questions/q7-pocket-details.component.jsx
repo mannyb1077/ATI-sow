@@ -11,6 +11,13 @@ class TvPocketDetails extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
+
   render() {
     const { values, handleChange, handleCheck } = this.props;
     return (
@@ -24,6 +31,7 @@ class TvPocketDetails extends React.Component {
           value={values.pocketMountOnly}
           checked={this.props.pocketMountOnly}
           onChange={handleCheck("pocketMountOnly")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>TV Mount in Pocket</label>
         <br />
@@ -33,6 +41,7 @@ class TvPocketDetails extends React.Component {
           value={values.pocketTvInside}
           checked={this.props.pocketTvInside}
           onChange={handleCheck("pocketTvInside")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>TV & Mount in Pocket</label>
         <br />
@@ -45,6 +54,7 @@ class TvPocketDetails extends React.Component {
           name='pocketWidth'
           value={values.pocketWidth}
           onChange={handleChange("pocketWidth")}
+          onKeyPress={this.onKeyPress}
           label='Pocket Width'
         />
 
@@ -54,6 +64,7 @@ class TvPocketDetails extends React.Component {
           name='pocketHeight'
           value={values.pocketHeight}
           onChange={handleChange("pocketHeight")}
+          onKeyPress={this.onKeyPress}
           label='pocketHeight'
         />
 
@@ -63,6 +74,7 @@ class TvPocketDetails extends React.Component {
           name='pocketDepth'
           value={values.pocketDepth}
           onChange={handleChange("pocketDepth")}
+          onKeyPress={this.onKeyPress}
           label='pocketDepth'
         />
         <br />

@@ -7,6 +7,7 @@ const SubmitButton = ({
   children,
   isGoogleSignIn,
   inverted,
+  handleSubmit,
   ...otherProps
 }) => (
   <button

@@ -10,6 +10,13 @@ class PhoneDataQuestion extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
+
   render() {
     const { values, handleCheck } = this.props;
     return (
@@ -25,7 +32,7 @@ class PhoneDataQuestion extends React.Component {
           value={values.phoneLocation}
           checked={this.props.phoneLocation}
           onChange={handleCheck("phoneLocation")}
-          label
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Phone Jack</label>
         <br />
@@ -36,6 +43,7 @@ class PhoneDataQuestion extends React.Component {
           value={values.dataLocation}
           checked={this.props.dataLocation}
           onChange={handleCheck("dataLocation")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Data Jack</label>
         <br />
@@ -46,6 +54,7 @@ class PhoneDataQuestion extends React.Component {
           value={values.apLocation}
           checked={this.props.apLocation}
           onChange={handleCheck("apLocation")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Access Point Location</label>
         <br />
@@ -55,6 +64,7 @@ class PhoneDataQuestion extends React.Component {
           value={values.apPowerLocation}
           checked={this.props.apPowerLocation}
           onChange={handleCheck("apPowerLocation")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Power at Access Point location</label>
         <br />

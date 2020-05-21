@@ -10,6 +10,13 @@ class TvSourcesAudio extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
+
   render() {
     const { values, handleCheck } = this.props;
     return (
@@ -23,6 +30,7 @@ class TvSourcesAudio extends React.Component {
           value={values.tvSourcesTvAudio}
           checked={this.props.tvSourcesTvAudio}
           onChange={handleCheck("tvSourcesTvAudio")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>TV Audio</label>
         <br />
@@ -32,6 +40,7 @@ class TvSourcesAudio extends React.Component {
           value={values.tvSourcesOverheadAudio}
           checked={this.props.tvSourcesOverheadAudio}
           onChange={handleCheck("tvSourcesOverheadAudio")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Overhead Audio</label>
         <br />
@@ -41,6 +50,7 @@ class TvSourcesAudio extends React.Component {
           value={values.tvSourcesLocalSoundbar}
           checked={this.props.tvSourcesLocalSoundbar}
           onChange={handleCheck("tvSourcesLocalSoundbar")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Sounbar Audio</label>
         <br />

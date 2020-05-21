@@ -11,6 +11,12 @@ class TvDetails extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
   render() {
     const { values, handleChange } = this.props;
     return (
@@ -24,8 +30,8 @@ class TvDetails extends React.Component {
           name='tvBrand'
           value={values.tvBrand}
           onChange={handleChange("tvBrand")}
+          onKeyPress={this.onKeyPress}
           label='TV Brand'
-          required
         />
 
         <FormInput
@@ -34,8 +40,8 @@ class TvDetails extends React.Component {
           name='tvModel'
           value={values.tvModel}
           onChange={handleChange("tvModel")}
+          onKeyPress={this.onKeyPress}
           label='TV Model'
-          required
         />
 
         <FormInput
@@ -44,8 +50,8 @@ class TvDetails extends React.Component {
           name='tvSize'
           value={values.tvSize}
           onChange={handleChange("tvSize")}
+          onKeyPress={this.onKeyPress}
           label='TV Size'
-          required
         />
         <br />
         <br />

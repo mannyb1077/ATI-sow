@@ -10,7 +10,12 @@ class TvMountQuestions extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
-
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
   render() {
     const { values, handleCheck } = this.props;
     return (
@@ -27,6 +32,7 @@ class TvMountQuestions extends React.Component {
           value={values.tvLift}
           checked={this.props.mountFlat}
           onChange={handleCheck("mountFlat")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Flat Mount</label>
         <br />
@@ -36,6 +42,7 @@ class TvMountQuestions extends React.Component {
           value={values.tvLift}
           checked={this.props.mountTilt}
           onChange={handleCheck("mountTilt")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Tilt Mount</label>
         <br />
@@ -45,6 +52,7 @@ class TvMountQuestions extends React.Component {
           value={values.mountArticulating}
           checked={this.props.mountArticulating}
           onChange={handleCheck("mountArticulating")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Articulating Mount</label>
 

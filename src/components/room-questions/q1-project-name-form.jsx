@@ -8,21 +8,27 @@ class ClientNameQuestion extends React.Component {
     event.preventDefault();
     this.props.nextQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
 
   render() {
     const { values, handleChange } = this.props;
+
     return (
       <div className='add-room'>
         <h1>Enter Client's Name</h1>
 
         <FormInput
-          onSubmit={this.continue}
           type='text'
           name='clientName'
           value={values.clientName}
           onChange={handleChange("clientName")}
+          onKeyPress={this.onKeyPress}
           label='Client Name'
-          required
         />
         <br />
         <br />

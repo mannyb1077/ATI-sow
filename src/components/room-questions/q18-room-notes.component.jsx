@@ -14,6 +14,12 @@ class RoomNotesQuestion extends React.Component {
     event.preventDefault();
     this.props.handleSubmit();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.handleSubmit();
+    }
+  };
 
   render() {
     const { values, handleChange } = this.props;

@@ -11,6 +11,12 @@ class AudioControls extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
   render() {
     const { values, handleCheck, handleChange } = this.props;
     return (
@@ -26,7 +32,7 @@ class AudioControls extends React.Component {
           value={values.distributedAudio}
           checked={this.props.distributedAudio}
           onChange={handleCheck("distributedAudio")}
-          label
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Distributed Audio</label>
         <br />
@@ -36,6 +42,7 @@ class AudioControls extends React.Component {
           value={values.dedicatedAudioSource}
           checked={this.props.dedicatedAudioSource}
           onChange={handleCheck("dedicatedAudioSource")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Dedicated Audio Source</label>
         <br />
@@ -46,7 +53,7 @@ class AudioControls extends React.Component {
           value={values.audioSourceOther}
           onChange={handleChange("audioSourceOther")}
           label='Other Audio source (ie. Local Turntable)'
-          required
+          onKeyPress={this.onKeyPress}
         />
 
         <h2>Audio Control:</h2>
@@ -56,7 +63,7 @@ class AudioControls extends React.Component {
           value={values.audioKeypad}
           checked={this.props.audioKeypad}
           onChange={handleCheck("audioKeypad")}
-          label
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Audio Keypad</label>
         <br />
@@ -67,7 +74,7 @@ class AudioControls extends React.Component {
           value={values.audioTouchPanel}
           checked={this.props.audioTouchPanel}
           onChange={handleCheck("audioTouchPanel")}
-          label
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Touch Panel</label>
         <br />
@@ -78,7 +85,7 @@ class AudioControls extends React.Component {
           value={values.audioIphone}
           checked={this.props.audioIphone}
           onChange={handleCheck("audioIphone")}
-          label
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>iPhone/iPad</label>
         <br />

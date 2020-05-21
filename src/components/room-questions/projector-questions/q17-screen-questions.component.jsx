@@ -11,6 +11,13 @@ class ScreenDetails extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
+
   render() {
     const { values, handleChange, handleCheck } = this.props;
     return (
@@ -25,6 +32,7 @@ class ScreenDetails extends React.Component {
           value={values.screenNew}
           checked={this.props.screenNew}
           onChange={handleCheck("screenNew")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>New Screen</label>
 
@@ -35,6 +43,7 @@ class ScreenDetails extends React.Component {
           value={values.screenCustomerProvided}
           checked={this.props.screenCustomerProvided}
           onChange={handleCheck("screenCustomerProvided")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Customer Provided Screen</label>
         <br />
@@ -46,6 +55,7 @@ class ScreenDetails extends React.Component {
           value={values.screenPerforated}
           checked={this.props.screenPerforated}
           onChange={handleCheck("screenPerforated")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Perforated Screen</label>
         <br />
@@ -55,6 +65,7 @@ class ScreenDetails extends React.Component {
           value={values.screenLightRejection}
           checked={this.props.screenLightRejection}
           onChange={handleCheck("screenLightRejection")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Light Rejection Screen</label>
         <br />
@@ -66,6 +77,7 @@ class ScreenDetails extends React.Component {
           value={values.screenFixed}
           checked={this.props.screenFixed}
           onChange={handleCheck("screenFixed")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Fixed Screen</label>
         <br />
@@ -75,6 +87,7 @@ class ScreenDetails extends React.Component {
           value={values.screenMotorized}
           checked={this.props.screenMotorized}
           onChange={handleCheck("screenMotorized")}
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Motorized Screen</label>
         <br />
@@ -87,6 +100,7 @@ class ScreenDetails extends React.Component {
           name='screenSize'
           value={values.screenSize}
           onChange={handleChange("screenSize")}
+          onKeyPress={this.onKeyPress}
           label='Screen Size (Diagonal Dimensions)'
         />
 
@@ -96,6 +110,7 @@ class ScreenDetails extends React.Component {
           name='screenWidth'
           value={values.screenWidth}
           onChange={handleChange("screenWidth")}
+          onKeyPress={this.onKeyPress}
           label='Screen Width'
         />
         <FormInput
@@ -104,6 +119,7 @@ class ScreenDetails extends React.Component {
           name='screenHeight'
           value={values.screenHeight}
           onChange={handleChange("screenHeight")}
+          onKeyPress={this.onKeyPress}
           label='Screen Height'
         />
         <FormInput
@@ -112,6 +128,7 @@ class ScreenDetails extends React.Component {
           name='throwDistance'
           value={values.throwDistance}
           onChange={handleChange("throwDistance")}
+          onKeyPress={this.onKeyPress}
           label='Throw Distance (from projector lens to Screen location)'
         />
         <FormInput
@@ -120,6 +137,7 @@ class ScreenDetails extends React.Component {
           name='screenGain'
           value={values.screenGain}
           onChange={handleChange("screenGain")}
+          onKeyPress={this.onKeyPress}
           label='Screen Gain'
         />
 
@@ -129,6 +147,7 @@ class ScreenDetails extends React.Component {
           name='projectorNotes'
           value={values.projectorNotes}
           onChange={handleChange("projectorNotes")}
+          onKeyPress={this.onKeyPress}
           label='Notes'
         />
         <br />

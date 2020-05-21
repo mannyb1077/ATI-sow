@@ -11,6 +11,13 @@ class CameraQuestion extends React.Component {
     event.preventDefault();
     this.props.previousQuestion();
   };
+  onKeyPress = (event) => {
+    if (event.which === 13) {
+      event.preventDefault();
+      this.props.nextQuestion();
+    }
+  };
+
   render() {
     const { values, handleCheck, handleChange } = this.props;
     return (
@@ -26,7 +33,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraBullet}
           checked={this.props.cameraBullet}
           onChange={handleCheck("cameraBullet")}
-          label
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Bullet Camera</label>
         <br />
@@ -36,7 +43,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraDome}
           checked={this.props.cameraDome}
           onChange={handleCheck("cameraDome")}
-          label
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Dome Camera</label>
         <br />
@@ -46,7 +53,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraPTZ}
           checked={this.props.cameraPTZ}
           onChange={handleCheck("cameraPTZ")}
-          label
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>PTZ Camera</label>
         <br />
@@ -57,7 +64,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraAnalog}
           checked={this.props.cameraAnalog}
           onChange={handleCheck("cameraAnalog")}
-          require
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Analog Camera</label>
         <br />
@@ -67,7 +74,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraIP}
           checked={this.props.cameraIP}
           onChange={handleCheck("cameraIP")}
-          require
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>IP Camera</label>
         <br />
@@ -78,7 +85,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraNest}
           checked={this.props.cameraNest}
           onChange={handleCheck("cameraNest")}
-          require
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Nest Camera</label>
         <br />
@@ -88,7 +95,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraRing}
           checked={this.props.cameraRing}
           onChange={handleCheck("cameraRing")}
-          require
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Ring Camera</label>
         <br />
@@ -98,7 +105,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraNestDoorbell}
           checked={this.props.cameraNestDoorbell}
           onChange={handleCheck("cameraNestDoorbell")}
-          require
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Nest Doorbell</label>
         <br />
@@ -108,7 +115,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraRingDoorbell}
           checked={this.props.cameraRingDoorbell}
           onChange={handleCheck("cameraRingDoorbell")}
-          require
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Ring Doorbell</label>
         <br />
@@ -119,7 +126,7 @@ class CameraQuestion extends React.Component {
           value={values.cameraPower}
           checked={this.props.cameraPower}
           onChange={handleCheck("cameraPower")}
-          require
+          onKeyPress={this.onKeyPress}
         />
         <label htmlFor=''>Power at camera location</label>
         <FormInput
@@ -128,6 +135,7 @@ class CameraQuestion extends React.Component {
           name='otherCloudCamera'
           value={values.otherCloudCamera}
           onChange={handleChange("otherCloudCamera")}
+          onKeyPress={this.onKeyPress}
           label='Other Camera Type'
         />
         <FormInput
@@ -136,9 +144,9 @@ class CameraQuestion extends React.Component {
           name='cameraWire'
           value={values.cameraWire}
           onChange={handleChange("cameraWire")}
+          onKeyPress={this.onKeyPress}
           label='What wire do we have at Camera location?'
         />
-
         <br />
         <br />
 
